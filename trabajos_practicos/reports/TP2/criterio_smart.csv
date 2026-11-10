@@ -1,0 +1,4 @@
+﻿criterio,umbral,valor,cumple
+R² en prueba,>= 0.45,0.5945818081994403,True
+R² ajustado en prueba,>= 0.3,0.37627970492221585,True
+MAE en prueba menor que el del Dummy,< 0.128,0.08789429477880176,True

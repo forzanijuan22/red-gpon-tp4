@@ -1,0 +1,7 @@
+﻿modelo,combinaciones,referencia,PR_AUC_cv_referencia,PR_AUC_cv_mejor,mejora_puntos,mejores_hiperparametros,segundos_busqueda
+Regresión Logística,4,{'C': 1},0.3209823934362099,0.32204675876623895,0.0010643653300290712,{'C': 0.01},3.260096099926159
+Árbol de Decisión,8,"{'max_depth': None, 'min_samples_leaf': 10}",0.19552088659893974,0.3010599588972404,0.10553907229830067,"{'max_depth': 8, 'min_samples_leaf': 50}",3.701809999998659
+KNN,8,"{'n_neighbors': 15, 'weights': 'uniform'}",0.22227608378867716,0.29875326503371685,0.07647718124503969,"{'n_neighbors': 101, 'weights': 'distance'}",6.9215287999249995
+Naive Bayes,4,{'var_smoothing': 1e-09},0.1199331669567715,0.2827232995976901,0.1627901326409186,{'var_smoothing': 0.1},1.331925200065598
+Random Forest,6,"{'min_samples_leaf': 1, 'max_depth': None}",0.25697687831361277,0.3418566789404387,0.08487980062682593,"{'max_depth': 10, 'min_samples_leaf': 5}",27.65392530011013
+Gradient Boosting,4,"{'learning_rate': 0.1, 'max_depth': 3}",0.18133279127388996,0.2534005074252684,0.07206771615137841,"{'learning_rate': 0.05, 'max_depth': 2}",26.41291009983979

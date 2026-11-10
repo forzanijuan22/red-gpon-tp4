@@ -1,0 +1,15 @@
+﻿modelo,conjunto,verdaderos_negativos,falsas_alarmas,en_riesgo_no_detectados,en_riesgo_detectados
+Dummy (prior),entrenamiento,3459,0,440,0
+Dummy (prior),prueba,865,0,108,0
+Regresión Logística,entrenamiento,2619,840,169,271
+Regresión Logística,prueba,688,177,48,60
+Árbol de Decisión,entrenamiento,2708,751,118,322
+Árbol de Decisión,prueba,674,191,52,56
+KNN,entrenamiento,3459,0,0,440
+KNN,prueba,794,71,72,36
+Naive Bayes,entrenamiento,2936,523,232,208
+Naive Bayes,prueba,742,123,69,39
+Random Forest,entrenamiento,3021,438,115,325
+Random Forest,prueba,784,81,65,43
+Gradient Boosting,entrenamiento,3227,232,227,213
+Gradient Boosting,prueba,818,47,68,40

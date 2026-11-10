@@ -1,0 +1,4 @@
+﻿modelo,combinaciones,RMSE_cv_por_defecto,RMSE_cv_mejor,mejora_pct,mejores_hiperparametros
+Ridge,3,0.1423274691758217,0.1423274691758217,0.0,{'alpha': 1}
+Random Forest,6,0.1521833239837903,0.14610574241125335,3.993592342078367,"{'max_depth': 8, 'min_samples_leaf': 3}"
+Gradient Boosting,4,0.1736154173064342,0.1543643574938171,11.088335420487828,"{'learning_rate': 0.05, 'max_depth': 2}"

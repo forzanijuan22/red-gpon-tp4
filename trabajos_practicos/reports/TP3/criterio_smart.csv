@@ -1,0 +1,5 @@
+﻿modelo,rol,criterio,umbral,valor,cumple
+Regresión Logística,elegido (individual),ROC-AUC en prueba,>= 0.68,0.6979875829586812,True
+Regresión Logística,elegido (individual),PR-AUC en prueba,>= 0.22,0.38863415774296056,True
+Random Forest,mejor en CV entre todos,ROC-AUC en prueba,>= 0.68,0.6754549347034896,False
+Random Forest,mejor en CV entre todos,PR-AUC en prueba,>= 0.22,0.31352752974780945,True

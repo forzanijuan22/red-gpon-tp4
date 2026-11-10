@@ -1,0 +1,8 @@
+﻿modelo,ROC_entrenamiento,ROC_cv,ROC_prueba,brecha_entrenamiento_cv,brecha_entrenamiento_prueba,diagnostico
+Dummy (prior),0.5,0.5,0.5,0.0,0.0,subajuste: sesgo alto (no separa ni el entrenamiento)
+Regresión Logística,0.7412041052327263,0.7179335667942051,0.6979875829586812,0.023270538438521227,0.043216522274045044,ajuste razonable: sesgo y varianza equilibrados
+Árbol de Decisión,0.83791755368078,0.6689388110312497,0.7101316634553629,0.16897874264953028,0.1277858902254171,sobreajuste: varianza alta (memoriza el entrenamiento)
+KNN,1.0,0.6882567572387644,0.6605223720830657,0.31174324276123555,0.33947762791693425,sobreajuste: varianza alta (memoriza el entrenamiento)
+Naive Bayes,0.7267871691765881,0.7065410961535055,0.6704881181759795,0.020246073023082678,0.05629905100060861,ajuste razonable: sesgo y varianza equilibrados
+Random Forest,0.9193014271071513,0.7106658372912952,0.6754549347034896,0.20863558981585617,0.24384649240366174,sobreajuste: varianza alta (memoriza el entrenamiento)
+Gradient Boosting,0.795212751977713,0.6633735511014003,0.7071933204881182,0.13183920087631273,0.08801943148959479,sobreajuste: varianza alta (memoriza el entrenamiento)
