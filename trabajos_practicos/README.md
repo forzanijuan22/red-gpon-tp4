@@ -6,7 +6,7 @@ Aprendizaje Automático y Grandes Datos (UNRaf, 2026). Juan Ignacio Forzani, Ale
 |---|---|
 | `notebooks/` | Notebooks entregables del TP2 (regresión) y del TP3 (clasificación), ya ejecutados de principio a fin |
 | `informes/` | Informes del TP2 y del TP3 y artículo científico integrador del TP4 (PDF) |
-| `presentaciones/` | Presentación del TP1 (análisis exploratorio del inventario; en PDF y en PowerPoint, con las diapositivas de respaldo) y presentaciones orales del TP2 y del TP3 |
+| `presentaciones/` | Presentaciones orales del TP1, del TP2 y del TP3 (sin las diapositivas de respaldo para preguntas) |
 | `src/` | Código de los TP: preparación de datos, modelos, informes, figuras y serialización |
 | `reports/` | Tablas de métricas y figuras de cada TP |
 
