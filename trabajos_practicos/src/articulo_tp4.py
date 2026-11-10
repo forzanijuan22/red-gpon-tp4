@@ -30,14 +30,18 @@ PLANTILLA = RAIZ / "reports" / "TP4" / "plantilla" / "Plantilla_Paper.docx"
 FIGURAS = RAIZ / "reports" / "TP4" / "figuras"
 CAPTURAS = RAIZ / "reports" / "TP4" / "capturas"
 DESTINO = RAIZ / "informes y presentaciones" / "TP4_articulo.docx"
+DESTINO_CORTO = RAIZ / "informes y presentaciones" / "version_8_paginas" / "TP4_articulo_8p.docx"
 ANCHO_COLUMNA = 6.9    # cm: la columna angosta de la plantilla mide 7,05 cm
 ANCHO_PAGINA = 12.0    # cm: el texto a una columna mide 16,5 cm
 AUTORES = "Juan Ignacio Forzani**; Alejo Racca**; Agustín Cesano**"
 # Completar después de publicar la aplicación y volver a correr:  python src/articulo_tp4.py --pdf
 # (mientras estén vacíos, el artículo muestra un texto resaltado en amarillo para completar)
 CORREO = "forzanijuan@gmail.com; alejoracca07@gmail.com; agustincesano09@gmail.com"   # en el orden de AUTORES
-URL_APP = ""     # por ejemplo, https://<nombre>.streamlit.app
-URL_REPO = ""    # por ejemplo, https://github.com/<usuario>/<repositorio>
+URL_APP = "https://red-gpon-tp4.streamlit.app"
+URL_REPO = "https://github.com/forzanijuan22/red-gpon-tp4"
+# Versión oficial: 10 páginas (el profe aceptó hasta 13). Con --8 se arma la versión reducida de 8 páginas, sin las
+# figuras y secciones extra (importancia de variables, umbral, segunda figura de la aplicación, reproducibilidad).
+LARGO = "--8" not in sys.argv
 TITULO = ("Del inventario al despliegue: modelos de aprendizaje automático para priorizar el mantenimiento de una red GPON")
 
 
@@ -446,6 +450,12 @@ def armar(m):
     assert P3[M3]["ROC_AUC"] >= meta3["ROC_AUC_prueba"] and P3[M3]["PR_AUC"] >= meta3["PR_AUC_prueba"]
 
     a = Articulo()
+
+    class _Nada:   # en la versión de 8 páginas, los bloques marcados con L. no se agregan
+        def __getattr__(self, _):
+            return lambda *args, **kwargs: None
+
+    L = a if LARGO else _Nada()
     palabras = a.resumen(
         f"Las empresas de fibra óptica registran el inventario de los equipos de sus clientes (ONT), pero rara vez lo "
         f"analizan para planificar el mantenimiento. Este trabajo integra las cuatro etapas de un proyecto de aprendizaje "
@@ -471,24 +481,25 @@ def armar(m):
         "de a un puerto entero dentro de una ventana de mantenimiento, y conectar a cada cliente nuevo en un puerto donde "
         "la señal le llegue con margen. La norma G.984.2 fija para los equipos de clase B+ una sensibilidad mínima de "
         "−27 dBm [@g984]: un cliente que recibe menos de −25 dBm queda a solo 2 dB de perder el servicio.")
-    a.p("El proyecto usó datos reales de una empresa de fibra óptica de la región. Mantener el *firmware* al día "
+    L.p("El proyecto usó datos reales de una empresa de fibra óptica de la región. Mantener el *firmware* al día "
         "corrige fallas de seguridad y de compatibilidad, pero cada actualización deja sin servicio a un puerto entero "
         "durante la ventana; y con poco margen de señal, un empalme degradado alcanza para cortar el servicio. Hoy ambas "
         "decisiones se toman con planillas y con la experiencia del personal técnico.")
-    a.p("El aprendizaje automático se aplica a las redes ópticas desde hace más de una década: Zibar *et al.* [@zibar] y "
-        "Khan *et al.* [@khan] muestran cómo pasó del procesamiento de la señal en el receptor a la gestión de la red. Las "
-        "revisiones de Musumeci *et al.* [@musumeci] y de Mata *et al.* [@mata] agrupan sus usos en estimación de la calidad de transmisión, gestión "
+    a.p("El aprendizaje automático se aplica a las redes ópticas desde hace más de una década" + (
+        ": Zibar *et al.* [@zibar] y Khan *et al.* [@khan] muestran cómo pasó del procesamiento de la señal en el receptor a "
+        "la gestión de la red. Las r" if LARGO else ". Las r") + "evisiones de Musumeci *et al.* [@musumeci] y de Mata *et al.* [@mata] agrupan sus usos en estimación de la calidad de transmisión, gestión "
         "de fallas, predicción de tráfico y monitoreo del desempeño, y Rafique y Velasco [@rafique] proponen arquitecturas para "
         "automatizar la red con esos modelos. En casi todos los casos se entrena con series de monitoreo (potencia óptica, "
         "tasa de errores, alarmas) de redes troncales o metropolitanas y con grandes volúmenes de datos. Con tablas "
         "pequeñas conviene comparar modelos lineales regularizados como *Ridge* [@hoerl,@hastie] con ensambles de árboles "
         "como *Random Forest* [@breiman] o *Gradient Boosting* [@friedman], más flexibles pero propensos al sobreajuste. "
-        "Con clases desbalanceadas conviene ajustar los pesos de clase o el umbral [@he], y la curva "
+        + ("Con clases desbalanceadas conviene ajustar los pesos de clase o el umbral [@he], y la curva " if LARGO
+           else "Con clases desbalanceadas, la curva ") +
         "precisión-*recall* es más informativa que la ROC [@saito]. Dos errores frecuentes invalidan los resultados: la "
         "fuga de información, cuando una entrada contiene la respuesta [@kaufman], y la validación aleatoria sobre datos "
         "agrupados, que reparte entre entrenamiento y prueba observaciones casi idénticas [@roberts]. Por último, llevar un "
         "modelo a producción agrega costos que no se ven en un *notebook*: dependencias, datos que cambian y "
-        "monitoreo [@sculley,@breck].")
+        "monitoreo " + ("[@sculley,@breck]." if LARGO else "[@sculley]."))
     a.p("Esos trabajos suponen datos de monitoreo continuos. Un proveedor regional, en cambio, suele tener solo el "
         "inventario de equipos (una foto estática, sin fechas ni fallas) y, a lo sumo, un listado puntual de la OLT. No "
         "encontramos trabajos que evalúen qué se puede aprender honestamente con esa información ni que lleven los modelos "
@@ -556,7 +567,7 @@ def armar(m):
         f"semilla 42, y los hiperparámetros se eligieron con *GridSearchCV* y *KFold* de cinco particiones sobre el "
         f"entrenamiento (Tabla 2). La codificación *one-hot* de localidad y *slot* y el escalado van dentro de un "
         f"*pipeline* de scikit-learn [@pedregosa], de modo que nada se ajusta con datos de prueba.")
-    a.p(f"Cada entrada tiene un motivo. La localidad y la tarjeta capturan diferencias de gestión entre zonas; la cantidad "
+    L.p(f"Cada entrada tiene un motivo. La localidad y la tarjeta capturan diferencias de gestión entre zonas; la cantidad "
         f"de equipos indica el tamaño del puerto; los porcentajes de equipos con salida de TV y de equipos modernos "
         f"describen su mezcla tecnológica, y la cantidad de modelos distintos mide cuán heterogéneo es. Las proporciones de "
         f"los cinco modelos más usados ({tops}) aportan la composición sin multiplicar los predictores. Como el estándar se "
@@ -590,9 +601,9 @@ def armar(m):
         f"{c(D3['pct_en_riesgo'] * 100, 1)} %), 2 dB por encima de la sensibilidad de la clase B+ [@g984]. La potencia, el "
         f"estado y el nivel de señal del propio equipo quedaron prohibidos como entradas. Sí entra la señal media de los "
         f"vecinos del mismo puerto sin contar al equipo (*vec_rxp*), porque ya está medida cuando se instala un cliente "
-        f"nuevo. Para el cliente *i* de un puerto *P* con *n*_{{P}} equipos online:")
-    a.ecuacion("*vec_rxp*_{i} = (Σ_{j∈P} RXP_{j} − RXP_{i}) / (*n*_{P} − 1)    (2)")
-    a.p(f"Los {D3['vec_rxp_nulos']} clientes que son los únicos online de su puerto no tienen vecinos: su valor se imputa "
+        f"nuevo." + (" Para el cliente *i* de un puerto *P* con *n*_{P} equipos online:" if LARGO else ""))
+    L.ecuacion("*vec_rxp*_{i} = (Σ_{j∈P} RXP_{j} − RXP_{i}) / (*n*_{P} − 1)    (2)")
+    L.p(f"Los {D3['vec_rxp_nulos']} clientes que son los únicos online de su puerto no tienen vecinos: su valor se imputa "
         f"con la mediana dentro del *pipeline*, que además codifica las variables categóricas con *one-hot* y escala las "
         f"numéricas.")
     a.p(f"Como los equipos de un puerto comparten la fibra, la partición se hizo con *StratifiedGroupKFold* de cinco "
@@ -615,15 +626,19 @@ def armar(m):
         "*pipeline* completo, las columnas de entrada en orden y la versión de scikit-learn. Un control automático "
         "verifica que el modelo guardado reproduce exactamente las métricas de prueba antes de publicarlo.")
     a.p(f"La aplicación se construyó con Streamlit [@streamlit] y Plotly. Un menú lateral agrupa un resumen del TP1, la "
-        f"metodología y un apartado por modelo, organizado en pestañas que responden una pregunta cada una (Tabla 3). El "
+        f"metodología y un apartado por modelo, organizado en pestañas que responden una pregunta cada una{' (Tabla 3)' if LARGO else ''}. El "
         f"margen de error que acompaña cada estimación del TP2 es el MAE de prueba ({c(P2[M2]['MAE'] * 100, 1)} puntos), y "
         f"el riesgo del TP3 se expresa de 0 a 100 como el percentil del puntaje del modelo entre los clientes actuales, con "
         f"un semáforo: menos de 50, conectar; de 50 a 80, revisar la fibra antes; 80 o más, elegir otro puerto. La carpeta "
         f"de la aplicación es autocontenida: incluye el código, los dos modelos, los datos procesados que muestra (sin "
         f"números de serie ni direcciones IP) y un archivo requirements.txt con versiones fijas, de modo que corre en "
         f"cualquier computadora con Python sin acceder a los datos originales."
-        + (f" Está publicada en {URL_APP} y su código, en {URL_REPO}." if URL_APP and URL_REPO else ""))
-    a.tabla("Elementos que pide la consigna para la aplicación y cómo se cumplen.", ["Requisito", "Implementación"], [
+        + (f" La aplicación está publicada en {URL_APP}, y su código, junto con el material de los cuatro trabajos, en "
+           f"{URL_REPO}. La versión pública reemplaza los nombres de las localidades por letras y solo trae datos agregados; "
+           f"las capturas de este artículo corresponden a la versión con los datos completos." if URL_APP and URL_REPO else "")
+        + ("" if LARGO else " Todo el procesamiento corre desde cero con un único comando, con semilla 42, y cada cifra de "
+           "este artículo se lee del archivo de métricas que genera el código."))
+    L.tabla("Elementos que pide la consigna para la aplicación y cómo se cumplen.", ["Requisito", "Implementación"], [
         ["Título y descripción", "Encabezado de cada apartado con el problema y el modelo usado"],
         ["Entrada de datos", "Selectores y deslizadores que parten de los valores de un puerto o cliente real"],
         ["Salida", "% estimado con su margen de error (TP2); riesgo de 0 a 100 y un veredicto en palabras (TP3)"],
@@ -631,8 +646,8 @@ def armar(m):
         ["Contexto", "Posición del caso frente a los puertos o clientes reales, importancia de variables y desempeño"],
         ["Extensiones", "Dos modelos, gráficos interactivos, explicabilidad y descarga de resultados en CSV"],
     ], [1.9, 5.05])
-    a.h2("Reproducibilidad")
-    a.p("Todo el procesamiento usa la semilla 42 y corre desde cero con un único comando (python run_all.py), que encadena "
+    L.h2("Reproducibilidad")
+    L.p("Todo el procesamiento usa la semilla 42 y corre desde cero con un único comando (python run_all.py), que encadena "
         "la preparación de los datos, los dos trabajos, la serialización de los modelos, la carpeta de la aplicación y este "
         "artículo; los *notebooks* del TP2 y del TP3 se ejecutan de principio a fin como parte de la verificación. Cada "
         "cifra de los informes, de la aplicación y de este artículo se lee de un único archivo de métricas generado por el "
@@ -685,19 +700,19 @@ def armar(m):
     a.figura(FIGURAS / "fig4_tp2_residuos.png", "Residuos de *Ridge* (TP2). Gris: entrenamiento fuera de muestra (validación "
              "cruzada); azul: prueba. (a) Predicho contra real, con la diagonal de predicción perfecta. (b) Residuos contra "
              "predichos.")
-    a.p(f"La curva de aprendizaje muestra que el error de validación de *Ridge* baja de "
+    L.p(f"La curva de aprendizaje muestra que el error de validación de *Ridge* baja de "
         f"{c(ca_r['RMSE_validacion_inicio'] * 100, 1)} a {c(ca_r['RMSE_validacion_final'] * 100, 1)} puntos al pasar de "
         f"{ca_r['n_inicio']} a {ca_r['n_final']} puertos de entrenamiento, con una brecha final de "
         f"{c(ca_r['brecha_final_pp'], 1)} puntos frente a {c(ca_rf['brecha_final_pp'], 1)} de *Random Forest*. La curva "
         f"todavía desciende: con más puertos, por ejemplo de otras redes de la empresa, el modelo mejoraría.")
-    a.p(f"Por permutación (Fig. {a.nfig + 1}a), las variables más importantes fueron el porcentaje de equipos con TV, la "
+    a.p(f"Por permutación{(' (Fig. ' + str(a.nfig + 1) + 'a)') if LARGO else ''}, las variables más importantes fueron el porcentaje de equipos con TV, la "
         f"localidad y las proporciones de EG8141A5 y EG8143A5. El porcentaje con TV y la proporción de EG8143A5 tienen una correlación de "
         f"{c(T2['correlacion_pct_catv_share_EG8143A5'])} (el EG8143A5 es el modelo con salida de TV), así que su "
         f"importancia se reparte entre ambas. Sumar variables de la OLT por puerto (porcentaje online, distancia y potencia "
         f"medianas) no mejoró el modelo: el R² de prueba bajó de {c(olt['sin OLT']['R2_prueba'])} a "
         f"{c(olt['con OLT']['R2_prueba'])}. El *firmware* fuera de estándar responde a decisiones administrativas por "
         f"localidad y por modelo, no al estado físico de la red.")
-    fig_imp = a.figura(FIGURAS / "fig_importancia.png", "Importancia por permutación en prueba, con su desvío: (a) caída "
+    fig_imp = L.figura(FIGURAS / "fig_importancia.png", "Importancia por permutación en prueba, con su desvío: (a) caída "
                        "del R² de *Ridge* (TP2); (b) caída del PR-AUC de la regresión logística (TP3).")
 
     a.h2("Clasificación")
@@ -724,7 +739,7 @@ def armar(m):
              "predicha. El asterisco marca el modelo elegido.")
     a.p(f"El hallazgo central es que la regla de los vecinos, sin aprendizaje, obtiene el mismo desempeño (ROC-AUC "
         f"{c(P3['Regla de los vecinos']['ROC_AUC'])} y PR-AUC {c(P3['Regla de los vecinos']['PR_AUC'])}; Fig. {a.nfig + 1}), y "
-        f"la importancia por permutación lo confirma (Fig. {fig_imp}b): desordenar *vec_rxp* hace caer el PR-AUC en "
+        f"la importancia por permutación lo confirma{(' (Fig. ' + str(fig_imp) + 'b)') if LARGO else ''}: desordenar *vec_rxp* hace caer el PR-AUC en "
         f"{c(imp3['vec_rxp'])}, mientras "
         f"que ninguna otra variable lo reduce en más de {c(max(otra_max, 0.001), 3)}. La señal de un cliente depende de la "
         f"fibra que comparte con su puerto; el modelo del equipo, el *firmware* y la distancia casi no agregan información. "
@@ -736,13 +751,13 @@ def armar(m):
     a.figura(FIGURAS / "fig6_tp3_roc_pr.png", "Curvas ROC (a) y precisión-*recall* (b) en prueba (TP3). La regla de los "
              "vecinos (negro, discontinua) rinde igual que la regresión logística (azul).")
     a.p(f"El umbral de decisión define el compromiso entre encontrar clientes en riesgo y no generar falsas alarmas "
-        f"(Fig. {a.nfig + 1}). Si se prioriza no perder clientes en riesgo, el umbral que da un *recall* del 80 % en "
+        f"{('(Fig. ' + str(a.nfig + 1) + ')') if LARGO else ''}. Si se prioriza no perder clientes en riesgo, el umbral que da un *recall* del 80 % en "
         f"validación cruzada ({c(umb['valor'])}) eleva el *recall* de prueba a {c(umb['recall'])}, pero marca a "
         f"{n(umb['marcados'])} clientes con una precisión de {c(umb['precision'])}. La aplicación deja elegir ese "
         f"compromiso con un deslizador.")
-    a.figura(FIGURAS / "fig_umbral.png", "Precisión y *recall* de la regresión logística en prueba según el umbral (TP3). "
+    L.figura(FIGURAS / "fig_umbral.png", "Precisión y *recall* de la regresión logística en prueba según el umbral (TP3). "
              "Las líneas punteadas marcan el umbral por defecto y el que da un *recall* del 80 % en validación cruzada.")
-    a.p(f"La búsqueda de hiperparámetros (Tabla 2) mejoró sobre todo a los modelos flexibles: *Gradient Boosting* redujo "
+    L.p(f"La búsqueda de hiperparámetros (Tabla 2) mejoró sobre todo a los modelos flexibles: *Gradient Boosting* redujo "
         f"su RMSE de validación un {c(gm2.loc['Gradient Boosting', 'mejora_pct'], 1)} % en el TP2 y *Naive Bayes* sumó "
         f"{c(gm3.loc['Naive Bayes', 'mejora_puntos'], 2)} puntos de PR-AUC en el TP3, casi siempre eligiendo más "
         f"regularización (árboles menos profundos, hojas más grandes, más vecinos). La regresión logística "
@@ -793,7 +808,7 @@ def armar(m):
         f"significa nada, y la regla de los vecinos mostró que la regresión logística, aunque cumple las metas, no agrega "
         f"información sobre una regla que un técnico puede aplicar con una planilla. Es coherente con las revisiones "
         f"[@musumeci,@mata]: la calidad de un enlace depende sobre todo de mediciones del propio enlace.")
-    a.p("La comparación entre ambos problemas también es metodológica. En la regresión, el R² ajustado mostró que sumar "
+    L.p("La comparación entre ambos problemas también es metodológica. En la regresión, el R² ajustado mostró que sumar "
         "predictores con pocos puertos empeora el modelo aunque el R² suba; en la clasificación, el PR-AUC y la matriz de "
         "confusión mostraron lo que la accuracy escondía. En los dos casos, la forma de validar evitó estimaciones "
         "optimistas: con una partición aleatoria por cliente en el TP3, la señal de cada cliente de prueba habría entrado "
@@ -819,11 +834,11 @@ def armar(m):
         f"aprendieron de una sola red y de un solo momento, y no deberían usarse en otra sin reentrenar; la aplicación ya "
         f"avisa cuando un caso queda fuera del rango conocido. Tercero, la confiabilidad: el resultado se muestra con su "
         f"margen de error y un veredicto en tres niveles, no como una certeza, y la decisión final es de un técnico.")
-    nf = a.figura_ancha(fig_capturas("fig_app_casos.png", [("app_tp2_caso_nuevo.png", (445, 175, 2975, 1100)),
+    nf = L.figura_ancha(fig_capturas("fig_app_casos.png", [("app_tp2_caso_nuevo.png", (445, 175, 2975, 1100)),
                                                 ("app_tp3_caso_nuevo.png", (445, 175, 2975, 1390))]),
              "Pestañas «Probar un caso nuevo», con validación de entradas. (a) TP2: estimación para un puerto definido por "
              "el usuario. (b) TP3: riesgo de un cliente nuevo según la señal de sus vecinos.")
-    a.p(f"La validación de entradas es la principal defensa ante esos límites. Las pestañas «Probar un caso nuevo» "
+    L.p(f"La validación de entradas es la principal defensa ante esos límites. Las pestañas «Probar un caso nuevo» "
         f"(Fig. {nf}) permiten explorar casos que no existen, pero si un valor o una combinación queda fuera de lo que "
         f"vio el modelo (por ejemplo, modelos que suman más de 100 % o una señal que ningún puerto tiene), la aplicación "
         f"lo avisa en lugar de devolver un número sin sentido.")
@@ -865,7 +880,7 @@ def armar(m):
     # ============================================================== Referencias
     a._agregar(escribir(vaciar(copy.deepcopy(a.modelo["h_ref"])), "Referencias"))   # mismo formato que la plantilla
     sin_citar = set(REFERENCIAS) - set(ORDEN_CITAS)
-    assert not sin_citar, f"referencias sin citar: {sin_citar}"
+    assert not (LARGO and sin_citar), f"referencias sin citar: {sin_citar}"
     for clave, k in sorted(ORDEN_CITAS.items(), key=lambda x: x[1]):
         a.referencia(k, REFERENCIAS[clave])
     return a, palabras
@@ -880,7 +895,7 @@ REFERENCIAS = {
     "pp. 1263–1284, sep. 2009.",
     "breck": "E. Breck, S. Cai, E. Nielsen, M. Salib y D. Sculley, \"The ML test score: A rubric for ML production readiness and "
     "technical debt reduction\", en *Proc. IEEE Int. Conf. Big Data*, 2017, pp. 1123–1132.",
-    "g984": "ITU-T, *Gigabit-capable passive optical networks (GPON): Physical media dependent (PMD) layer specification*, "
+    "g984": "ITU-T, *Gigabit-capable passive optical networks (G-PON): Physical media dependent (PMD) layer specification*, "
     "Rec. G.984.2, Amd. 1. Ginebra, Suiza: Unión Internacional de Telecomunicaciones, 2006.",
     "musumeci": "F. Musumeci *et al.*, \"An overview on application of machine learning techniques in optical networks\", *IEEE "
     "Commun. Surveys Tuts.*, vol. 21, no. 2, pp. 1383–1408, 2019.",
@@ -926,12 +941,13 @@ def exportar_pdf(docx, pdf):
 def main():
     m = json.loads(METRICS.read_text(encoding="utf-8"))
     articulo, palabras = armar(m)
-    articulo.guardar(DESTINO)
-    print(f"{DESTINO.relative_to(RAIZ)}: {articulo.nfig} figuras, {articulo.ntab} tablas, {len(REFERENCIAS)} referencias, "
+    destino = DESTINO if LARGO else DESTINO_CORTO
+    articulo.guardar(destino)
+    print(f"{destino.relative_to(RAIZ)}: {articulo.nfig} figuras, {articulo.ntab} tablas, {len(ORDEN_CITAS)} referencias, "
           f"resumen de {palabras} palabras")
     if "--pdf" in sys.argv:
-        pdf = DESTINO.with_suffix(".pdf")
-        exportar_pdf(DESTINO, pdf)
+        pdf = destino.with_suffix(".pdf")
+        exportar_pdf(destino, pdf)
         print(pdf.relative_to(RAIZ))
 
 
