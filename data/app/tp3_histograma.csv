@@ -1,0 +1,43 @@
+desde_dBm,clase,clientes
+-37.0,degradada,1
+-32.0,degradada,4
+-31.0,degradada,8
+-30.5,degradada,5
+-30.0,degradada,21
+-29.5,degradada,7
+-29.0,degradada,29
+-28.5,degradada,21
+-28.0,degradada,39
+-27.5,degradada,40
+-27.0,en riesgo,87
+-26.5,en riesgo,83
+-26.0,en riesgo,101
+-25.5,en riesgo,102
+-25.0,sin riesgo,128
+-24.5,sin riesgo,143
+-24.0,sin riesgo,207
+-23.5,sin riesgo,211
+-23.0,sin riesgo,194
+-22.5,sin riesgo,174
+-22.0,sin riesgo,224
+-21.5,sin riesgo,238
+-21.0,sin riesgo,248
+-20.5,sin riesgo,296
+-20.0,sin riesgo,290
+-19.5,sin riesgo,334
+-19.0,sin riesgo,348
+-18.5,sin riesgo,289
+-18.0,sin riesgo,264
+-17.5,sin riesgo,227
+-17.0,sin riesgo,207
+-16.5,sin riesgo,161
+-16.0,sin riesgo,87
+-15.5,sin riesgo,32
+-15.0,sin riesgo,10
+-14.5,sin riesgo,4
+-14.0,sin riesgo,1
+-12.5,sin riesgo,1
+-11.0,sin riesgo,1
+-9.5,sin riesgo,2
+-5.5,sin riesgo,1
+0.0,sin riesgo,2

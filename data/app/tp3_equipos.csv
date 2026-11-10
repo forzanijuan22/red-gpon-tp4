@@ -1,0 +1,23 @@
+Modelo_canonico,n,lan,wifi,gen
+EG8141A5,1645,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),5
+EG8143A5,895,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),5
+CN1001,856,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),5
+RDC141,353,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),5
+CN2002,312,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),5
+RDC143,251,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),5
+HG8546M,148,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),3
+EG8141H5,135,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),5
+EG8145V5,90,4 GE,Wi-Fi 5 Dual Band (2.4/5GHz),5
+RDC145,62,4 GE,Wi-Fi 4 (2.4 GHz),6
+HG8247H5,36,4 GE,Wi-Fi 4 (2.4 GHz),3
+CN2002V9.0,30,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),2
+EG8247W5,20,4 GE,Wi-Fi 5 Dual Band (2.4/5GHz),5
+RDC247,17,4 GE,Wi-Fi 5 Dual Band (2.4/5GHz),5
+HS8546V,7,4 GE,Wi-Fi 5 Dual Band (2.4/5GHz),3
+HS8545M5,6,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),5
+HS8545M,4,1 GE + 3 FE,Wi-Fi 4 (2.4 GHz),3
+310M,1,1 GE,Sin Wi-Fi (Bridge),3
+HS8145V5,1,4 GE,Wi-Fi 5 Dual Band (2.4/5GHz),6
+HG8245H5,1,2 GE + 2 FE,Wi-Fi 4 (2.4 GHz),5
+EG8145X6-10,1,4 GE,Wi-Fi 6 Dual Band (2.4/5GHz),5
+NanoG,1,1 GE,Sin Wi-Fi (Bridge),4

@@ -1,0 +1,1679 @@
+{
+  "fase1_chequeos": {
+    "total": 42,
+    "ok": 42,
+    "detalle": {
+      "Filas": {
+        "esperado": 5114.0,
+        "obtenido": 5114.0,
+        "ok": true
+      },
+      "Localidades": {
+        "esperado": 9.0,
+        "obtenido": 9.0,
+        "ok": true
+      },
+      "Tarjetas (Localidad+Slot)": {
+        "esperado": 23.0,
+        "obtenido": 23.0,
+        "ok": true
+      },
+      "Puertos PON (Localidad+Slot+PON)": {
+        "esperado": 301.0,
+        "obtenido": 301.0,
+        "ok": true
+      },
+      "Modelos (nombres originales)": {
+        "esperado": 24.0,
+        "obtenido": 24.0,
+        "ok": true
+      },
+      "Modelos canónicos": {
+        "esperado": 22.0,
+        "obtenido": 22.0,
+        "ok": true
+      },
+      "Versiones de firmware": {
+        "esperado": 29.0,
+        "obtenido": 29.0,
+        "ok": true
+      },
+      "Puertos 1 GE + 3 FE": {
+        "esperado": 4868.0,
+        "obtenido": 4868.0,
+        "ok": true
+      },
+      "Puertos 4 GE": {
+        "esperado": 243.0,
+        "obtenido": 243.0,
+        "ok": true
+      },
+      "Puertos 1 GE": {
+        "esperado": 2.0,
+        "obtenido": 2.0,
+        "ok": true
+      },
+      "Puertos 2 GE + 2 FE": {
+        "esperado": 1.0,
+        "obtenido": 1.0,
+        "ok": true
+      },
+      "Wi-Fi 4": {
+        "esperado": 4973.0,
+        "obtenido": 4973.0,
+        "ok": true
+      },
+      "Wi-Fi 5": {
+        "esperado": 138.0,
+        "obtenido": 138.0,
+        "ok": true
+      },
+      "Bridge (sin Wi-Fi)": {
+        "esperado": 2.0,
+        "obtenido": 2.0,
+        "ok": true
+      },
+      "Wi-Fi 6": {
+        "esperado": 1.0,
+        "obtenido": 1.0,
+        "ok": true
+      },
+      "Equipos moderno": {
+        "esperado": 244.0,
+        "obtenido": 244.0,
+        "ok": true
+      },
+      "% moderno": {
+        "esperado": 4.8,
+        "obtenido": 4.8,
+        "ok": true
+      },
+      "fw_fuera_estandar = 1": {
+        "esperado": 1476.0,
+        "obtenido": 1476.0,
+        "ok": true
+      },
+      "% fw_fuera_estandar": {
+        "esperado": 28.9,
+        "obtenido": 28.9,
+        "ok": true
+      },
+      "Versiones de HG8546M (con 546M)": {
+        "esperado": 10.0,
+        "obtenido": 10.0,
+        "ok": true
+      },
+      "Inconsistencias contra EQUIVALENCIAS": {
+        "esperado": 0.0,
+        "obtenido": 0.0,
+        "ok": true
+      },
+      "Duplicados en Localidad+Board+Slot+PON+ID": {
+        "esperado": 0.0,
+        "obtenido": 0.0,
+        "ok": true
+      },
+      "ONTs con ID >= 120 (id_alto)": {
+        "esperado": 45.0,
+        "obtenido": 45.0,
+        "ok": true
+      },
+      "ONTs con ID 127": {
+        "esperado": 31.0,
+        "obtenido": 31.0,
+        "ok": true
+      },
+      "Percentil 25 de ONTs por tarjeta": {
+        "esperado": 120.5,
+        "obtenido": 120.5,
+        "ok": true
+      },
+      "Corr. ID medio por localidad vs ONTs por PON": {
+        "esperado": 0.95,
+        "obtenido": 0.95,
+        "ok": true
+      },
+      "Corr. ID medio por PON vs ONTs del PON (aprox.)": {
+        "esperado": 0.87,
+        "obtenido": 0.87,
+        "ok": true
+      },
+      "EG8143A5 con firmware V3R017C10S125": {
+        "esperado": 391.0,
+        "obtenido": 391.0,
+        "ok": true
+      },
+      "Equipos con CATV = Sí": {
+        "esperado": 1025.0,
+        "obtenido": 1025.0,
+        "ok": true
+      },
+      "% con CATV": {
+        "esperado": 20.0,
+        "obtenido": 20.0,
+        "ok": true
+      },
+      "OLT: filas": {
+        "esperado": 5804.0,
+        "obtenido": 5804.0,
+        "ok": true
+      },
+      "OLT: con ubicación válida": {
+        "esperado": 5780.0,
+        "obtenido": 5780.0,
+        "ok": true
+      },
+      "OLT: que cruzan con el inventario": {
+        "esperado": 5052.0,
+        "obtenido": 5052.0,
+        "ok": true
+      },
+      "OLT: Online": {
+        "esperado": 5244.0,
+        "obtenido": 5244.0,
+        "ok": true
+      },
+      "OLT: Offline": {
+        "esperado": 312.0,
+        "obtenido": 312.0,
+        "ok": true
+      },
+      "OLT: DyingGasp": {
+        "esperado": 211.0,
+        "obtenido": 211.0,
+        "ok": true
+      },
+      "OLT: Loss (LOS)": {
+        "esperado": 33.0,
+        "obtenido": 33.0,
+        "ok": true
+      },
+      "OLT: LOFi": {
+        "esperado": 1.0,
+        "obtenido": 1.0,
+        "ok": true
+      },
+      "OLT: Desconocido": {
+        "esperado": 3.0,
+        "obtenido": 3.0,
+        "ok": true
+      },
+      "Obj. 14: dataset (online, cruzan, lectura válida)": {
+        "esperado": 4872.0,
+        "obtenido": 4872.0,
+        "ok": true
+      },
+      "Obj. 14: en riesgo (< -25 dBm)": {
+        "esperado": 548.0,
+        "obtenido": 548.0,
+        "ok": true
+      },
+      "Obj. 14: % en riesgo": {
+        "esperado": 11.2,
+        "obtenido": 11.2,
+        "ok": true
+      }
+    }
+  },
+  "obj01": {
+    "modelos_originales": 24,
+    "modelos_canonicos": 22,
+    "ranking_top5": [
+      {
+        "Modelo_canonico": "EG8141A5",
+        "cantidad": 1698,
+        "pct": 33.2
+      },
+      {
+        "Modelo_canonico": "EG8143A5",
+        "cantidad": 968,
+        "pct": 18.93
+      },
+      {
+        "Modelo_canonico": "CN1001",
+        "cantidad": 903,
+        "pct": 17.66
+      },
+      {
+        "Modelo_canonico": "RDC141",
+        "cantidad": 371,
+        "pct": 7.25
+      },
+      {
+        "Modelo_canonico": "CN2002",
+        "cantidad": 335,
+        "pct": 6.55
+      }
+    ],
+    "pct_top3": 69.79,
+    "pct_top5": 83.59,
+    "modelos_con_menos_de_5_equipos": 6,
+    "puertos_ge": 5844,
+    "puertos_fe": 14606,
+    "pct_puertos_fe": 71.42298288508557,
+    "equipos_con_algun_puerto_fe": 4869,
+    "pct_equipos_con_algun_puerto_fe": 95.20922956589753,
+    "configuracion_puertos": {
+      "1 GE + 3 FE": 4868,
+      "4 GE": 243,
+      "1 GE": 2,
+      "2 GE + 2 FE": 1
+    },
+    "pct_catv": 20.043019163081734,
+    "equipos_catv": 1025
+  },
+  "obj02": {
+    "total": {
+      "Wi-Fi 4": {
+        "equipos": 4973,
+        "pct": 97.24
+      },
+      "Wi-Fi 5": {
+        "equipos": 138,
+        "pct": 2.7
+      },
+      "Sin Wi-Fi (bridge)": {
+        "equipos": 2,
+        "pct": 0.04
+      },
+      "Wi-Fi 6": {
+        "equipos": 1,
+        "pct": 0.02
+      }
+    },
+    "localidad_con_mas_wifi4": "Localidad I",
+    "pct_wifi4_max": 100.0,
+    "localidad_con_menos_wifi4": "Localidad H",
+    "pct_wifi4_min": 94.68,
+    "equipos_wifi_moderno": 139,
+    "wifi_moderno_por_localidad": {
+      "Localidad A": 0,
+      "Localidad B": 1,
+      "Localidad C": 24,
+      "Localidad D": 4,
+      "Localidad E": 14,
+      "Localidad F": 21,
+      "Localidad G": 2,
+      "Localidad H": 73,
+      "Localidad I": 0
+    }
+  },
+  "obj03": {
+    "advertencia_fuera_vs_desactualizado": {
+      "decision": "se mantiene la definición (moda por modelo); validar con la empresa",
+      "fuera_estandar_con_generacion_mayor": 578,
+      "pct_de_los_fuera_estandar": 39.15989159891599,
+      "por_modelo": {
+        "EG8143A5": 577,
+        "HG8247H5": 1
+      }
+    },
+    "versiones_totales": 29,
+    "equipos_fuera_estandar": 1476,
+    "pct_fuera_estandar": 28.8619475948377,
+    "pct_fuera_por_localidad": {
+      "Localidad A": 86.79,
+      "Localidad B": 32.42,
+      "Localidad C": 21.6,
+      "Localidad D": 21.61,
+      "Localidad E": 23.76,
+      "Localidad F": 34.3,
+      "Localidad G": 27.91,
+      "Localidad H": 28.83,
+      "Localidad I": 38.46
+    },
+    "pct_fuera_por_modelo": {
+      "EG8141A5": 39.63,
+      "EG8143A5": 59.61,
+      "CN1001": 17.05,
+      "HG8546M": 36.18,
+      "HG8247H5": 40.54,
+      "EG8247W5": 5.0,
+      "HS8545M5": 16.67,
+      "RDC141": 0.0,
+      "CN2002": 0.0,
+      "RDC143": 0.0,
+      "EG8141H5": 0.0,
+      "EG8145V5": 0.0,
+      "RDC145": 0.0,
+      "CN2002V9.0": 0.0,
+      "RDC247": 0.0,
+      "HS8546V": 0.0,
+      "HS8545M": 0.0,
+      "310M": 0.0,
+      "EG8145X6-10": 0.0,
+      "HG8245H5": 0.0,
+      "HS8145V5": 0.0,
+      "NanoG": 0.0
+    },
+    "firmware_estandar_por_modelo": {
+      "EG8141A5": "V5R019C10S100",
+      "EG8143A5": "V3R017C10S125",
+      "CN1001": "V5R019C00S050",
+      "HG8546M": "V3R017C10S125",
+      "HG8247H5": "V3R015C10S120",
+      "EG8247W5": "V5R020C00S060",
+      "HS8545M5": "V5R019C00S050",
+      "RDC141": "V5R019C10S125",
+      "CN2002": "V5R019C00S125",
+      "RDC143": "V5R019C00S125",
+      "EG8141H5": "V5R021C10S210",
+      "EG8145V5": "V5R019C20S145",
+      "RDC145": "V6R020C10S060",
+      "CN2002V9.0": "V2.2.0P1N44",
+      "RDC247": "V5R020C00S060",
+      "HS8546V": "V3R017C10S138",
+      "HS8545M": "V3R017C10S105",
+      "310M": "V3R015C10S106",
+      "EG8145X6-10": "V5R022C00S408",
+      "HG8245H5": "V5R021C10S200",
+      "HS8145V5": "V6R020C10S060",
+      "NanoG": "V4R004C06S000"
+    },
+    "modelo_con_mas_equipos_fuera": "EG8141A5",
+    "equipos_fuera_modelo_top": 673,
+    "eg8143a5": {
+      "equipos": 968,
+      "versiones": {
+        "V3R017C10S125": 391,
+        "V5R019C00S125": 357,
+        "V5R019C10S125": 220
+      },
+      "con_v3r017c10s125": 391,
+      "fuera_estandar": 577,
+      "con_v3_por_localidad": {
+        "Localidad A": 6,
+        "Localidad B": 4,
+        "Localidad C": 51,
+        "Localidad D": 49,
+        "Localidad E": 23,
+        "Localidad F": 185,
+        "Localidad G": 29,
+        "Localidad H": 38,
+        "Localidad I": 6
+      }
+    },
+    "modelos_con_mas_de_una_version": 7,
+    "hg8546m_versiones": 10
+  },
+  "obj06": {
+    "tarjetas": 23,
+    "pon_totales": 301,
+    "pon_posibles": 368,
+    "pct_pon_usados": 81.79347826086956,
+    "p25_onts_por_tarjeta": 120.5,
+    "mediana_onts_por_tarjeta": 195.0,
+    "tarjetas_bajo_p25": 6,
+    "tarjetas_bajo_p25_detalle": [
+      {
+        "tarjeta": "Localidad G · Slot 2/",
+        "onts": 4,
+        "pon_usados": 2
+      },
+      {
+        "tarjeta": "Localidad C · Slot 3/",
+        "onts": 34,
+        "pon_usados": 2
+      },
+      {
+        "tarjeta": "Localidad C · Slot 2/",
+        "onts": 105,
+        "pon_usados": 16
+      },
+      {
+        "tarjeta": "Localidad A · Slot 0/",
+        "onts": 106,
+        "pon_usados": 11
+      },
+      {
+        "tarjeta": "Localidad H · Slot 4/",
+        "onts": 109,
+        "pon_usados": 14
+      },
+      {
+        "tarjeta": "Localidad G · Slot 0/",
+        "onts": 119,
+        "pon_usados": 16
+      }
+    ],
+    "onts_en_tarjetas_bajo_p25": 477,
+    "onts_por_pon": {
+      "media": 16.99003322259136,
+      "mediana": 16.0,
+      "min": 1.0,
+      "max": 73.0
+    },
+    "pon_con_5_equipos_o_menos": 41,
+    "san_martin_slot2": {
+      "onts": 4,
+      "pon_usados": 2,
+      "nota": "puede ser una tarjeta en expansión: validar con la empresa"
+    },
+    "ocupacion_real_online": "pendiente: se calcula en la Fase 5 con el listado de la OLT"
+  },
+  "obj09_tp2": {
+    "datos": {
+      "pon": 301,
+      "entrenamiento": 240,
+      "prueba": 61,
+      "objetivo_media": 0.2947091265914915,
+      "objetivo_desvio": 0.19848723503456017,
+      "objetivo_mediana": 0.2727272727272727,
+      "pon_con_0_pct": 26,
+      "pon_con_100_pct": 5
+    },
+    "variables": {
+      "categoricas": [
+        "Localidad",
+        "Slot"
+      ],
+      "numericas": [
+        "onts",
+        "pct_moderno",
+        "pct_catv",
+        "n_modelos",
+        "share_EG8141A5",
+        "share_EG8143A5",
+        "share_CN1001",
+        "share_CN2002",
+        "share_RDC143"
+      ],
+      "shares_top5": [
+        "share_EG8141A5",
+        "share_EG8143A5",
+        "share_CN1001",
+        "share_CN2002",
+        "share_RDC143"
+      ],
+      "prohibidas": [
+        "pct_v3",
+        "n_versiones",
+        "pct_fw_fuera"
+      ],
+      "predictores_efectivos": 21
+    },
+    "hiperparametros_elegidos": {
+      "Dummy (promedio)": "-",
+      "Regresión Lineal": "-",
+      "Ridge": "{'alpha': 1}",
+      "Random Forest": "{'max_depth': 8, 'min_samples_leaf': 3}",
+      "Gradient Boosting": "{'learning_rate': 0.05, 'max_depth': 2}"
+    },
+    "entrenamiento": {
+      "Dummy (promedio)": {
+        "MSE": 0.040689089488249834,
+        "RMSE": 0.20171536750641939,
+        "MAE": 0.14679590445388352,
+        "R2": 0.0,
+        "R2_ajustado": 0.0
+      },
+      "Regresión Lineal": {
+        "MSE": 0.01724999060121607,
+        "RMSE": 0.1313392195850732,
+        "MAE": 0.0990713832245173,
+        "R2": 0.5760536591462065,
+        "R2_ajustado": 0.5352147914492815
+      },
+      "Ridge": {
+        "MSE": 0.01733654034180554,
+        "RMSE": 0.13166829664655627,
+        "MAE": 0.09972992263547407,
+        "R2": 0.5739265596785602,
+        "R2_ajustado": 0.5328827879044766
+      },
+      "Random Forest": {
+        "MSE": 0.009598320193917141,
+        "RMSE": 0.09797101711178231,
+        "MAE": 0.07310356509757554,
+        "R2": 0.7641058004827329,
+        "R2_ajustado": 0.7413820473182255
+      },
+      "Gradient Boosting": {
+        "MSE": 0.010831638204460451,
+        "RMSE": 0.10407515651902932,
+        "MAE": 0.0775853626742513,
+        "R2": 0.7337950212036963,
+        "R2_ajustado": 0.708151422328823
+      }
+    },
+    "cv_media": {
+      "Dummy (promedio)": {
+        "MSE": 0.04079686949406113,
+        "RMSE": 0.20163969809671428,
+        "MAE": 0.14694273162169946,
+        "R2": -0.00756137556260148,
+        "R2_ajustado": -0.00756137556260148
+      },
+      "Regresión Lineal": {
+        "MSE": 0.02068951310468697,
+        "RMSE": 0.1429692142510685,
+        "MAE": 0.10958201265281171,
+        "R2": 0.489250892876998,
+        "R2_ajustado": 0.07672276789303481
+      },
+      "Ridge": {
+        "MSE": 0.020483729478631345,
+        "RMSE": 0.1423274691758217,
+        "MAE": 0.10930101678375699,
+        "R2": 0.49404799237608843,
+        "R2_ajustado": 0.08539444775677527
+      },
+      "Random Forest": {
+        "MSE": 0.021640945945107015,
+        "RMSE": 0.14610574241125332,
+        "MAE": 0.11041845248983444,
+        "R2": 0.4646725550666105,
+        "R2_ajustado": 0.032292695697334416
+      },
+      "Gradient Boosting": {
+        "MSE": 0.02426381534293783,
+        "RMSE": 0.1543643574938171,
+        "MAE": 0.11309322774278141,
+        "R2": 0.3878903859464408,
+        "R2_ajustado": -0.10650584078912621
+      }
+    },
+    "cv_desvio": {
+      "Dummy (promedio)": {
+        "MSE": 0.005219034020168109,
+        "RMSE": 0.013148272012276023,
+        "MAE": 0.010420645342483447,
+        "R2": 0.008648092569488936,
+        "R2_ajustado": 0.008648092569488936
+      },
+      "Regresión Lineal": {
+        "MSE": 0.005143063530965096,
+        "RMSE": 0.017653501108811375,
+        "MAE": 0.015506891354266411,
+        "R2": 0.10578012315659807,
+        "R2_ajustado": 0.19121791493692725
+      },
+      "Ridge": {
+        "MSE": 0.004871256262456389,
+        "RMSE": 0.016830812392635366,
+        "MAE": 0.014693535366661084,
+        "R2": 0.10002345411015924,
+        "R2_ajustado": 0.18081162858374944
+      },
+      "Random Forest": {
+        "MSE": 0.005407020530128606,
+        "RMSE": 0.019172179700137803,
+        "MAE": 0.016463099309460372,
+        "R2": 0.11988602189588704,
+        "R2_ajustado": 0.21671703958102656
+      },
+      "Gradient Boosting": {
+        "MSE": 0.006727109829660499,
+        "RMSE": 0.02333078648639132,
+        "MAE": 0.013242092920718644,
+        "R2": 0.21556459157124222,
+        "R2_ajustado": 0.38967445399416867
+      }
+    },
+    "prueba": {
+      "Dummy (promedio)": {
+        "MSE": 0.03370491547554172,
+        "RMSE": 0.18358898516943145,
+        "MAE": 0.127924153947304,
+        "R2": -0.005372529896800371,
+        "R2_ajustado": -0.005372529896800371
+      },
+      "Regresión Lineal": {
+        "MSE": 0.013822138042926944,
+        "RMSE": 0.11756758925370098,
+        "MAE": 0.0887593523292638,
+        "R2": 0.5877041168406335,
+        "R2_ajustado": 0.36569864129328233
+      },
+      "Ridge": {
+        "MSE": 0.013591564798659727,
+        "RMSE": 0.1165828666599845,
+        "MAE": 0.08789429477880176,
+        "R2": 0.5945818081994403,
+        "R2_ajustado": 0.37627970492221585
+      },
+      "Random Forest": {
+        "MSE": 0.012877110524008637,
+        "RMSE": 0.11347735687796327,
+        "MAE": 0.08537267879921656,
+        "R2": 0.6158930232393589,
+        "R2_ajustado": 0.40906618959901375
+      },
+      "Gradient Boosting": {
+        "MSE": 0.013350195898440984,
+        "RMSE": 0.1155430478152666,
+        "MAE": 0.08274692335850826,
+        "R2": 0.6017815195301932,
+        "R2_ajustado": 0.38735618389260495
+      }
+    },
+    "diagnostico": {
+      "Dummy (promedio)": {
+        "brecha_entrenamiento_prueba": 0.005372529896800371,
+        "brecha_entrenamiento_cv": 0.00756137556260148,
+        "diagnostico": "subajuste: sesgo alto (no aprende ni el entrenamiento)"
+      },
+      "Regresión Lineal": {
+        "brecha_entrenamiento_prueba": -0.011650457694426963,
+        "brecha_entrenamiento_cv": 0.08680276626920852,
+        "diagnostico": "ajuste razonable: sesgo y varianza equilibrados"
+      },
+      "Ridge": {
+        "brecha_entrenamiento_prueba": -0.020655248520880076,
+        "brecha_entrenamiento_cv": 0.07987856730247178,
+        "diagnostico": "ajuste razonable: sesgo y varianza equilibrados"
+      },
+      "Random Forest": {
+        "brecha_entrenamiento_prueba": 0.148212777243374,
+        "brecha_entrenamiento_cv": 0.29943324541612243,
+        "diagnostico": "sobreajuste: varianza alta (memoriza el entrenamiento)"
+      },
+      "Gradient Boosting": {
+        "brecha_entrenamiento_prueba": 0.13201350167350312,
+        "brecha_entrenamiento_cv": 0.3459046352572555,
+        "diagnostico": "sobreajuste: varianza alta (memoriza el entrenamiento)"
+      }
+    },
+    "umbrales_diagnostico": {
+      "subajuste_R2_entrenamiento": 0.45,
+      "sobreajuste_brecha": 0.15
+    },
+    "mejor_modelo": "Ridge",
+    "gridsearch_mejora": {
+      "Ridge": {
+        "combinaciones": 3,
+        "RMSE_cv_por_defecto": 0.1423274691758217,
+        "RMSE_cv_mejor": 0.1423274691758217,
+        "mejora_pct": 0.0,
+        "mejores_hiperparametros": "{'alpha': 1}"
+      },
+      "Random Forest": {
+        "combinaciones": 6,
+        "RMSE_cv_por_defecto": 0.1521833239837903,
+        "RMSE_cv_mejor": 0.14610574241125335,
+        "mejora_pct": 3.993592342078367,
+        "mejores_hiperparametros": "{'max_depth': 8, 'min_samples_leaf': 3}"
+      },
+      "Gradient Boosting": {
+        "combinaciones": 4,
+        "RMSE_cv_por_defecto": 0.1736154173064342,
+        "RMSE_cv_mejor": 0.1543643574938171,
+        "mejora_pct": 11.088335420487828,
+        "mejores_hiperparametros": "{'learning_rate': 0.05, 'max_depth': 2}"
+      }
+    },
+    "importancia_permutacion": {
+      "pct_catv": 0.9143712277489339,
+      "Localidad": 0.2672900832038534,
+      "share_EG8141A5": 0.15454274157360354,
+      "share_EG8143A5": 0.12459515287892907,
+      "onts": 0.018654947777381452,
+      "share_CN1001": 0.010574060488425303,
+      "share_RDC143": 0.008018048095123697,
+      "pct_moderno": 0.006897027043630903,
+      "share_CN2002": 0.0011442534768610236,
+      "n_modelos": -0.00882234141868176,
+      "Slot": -0.02053388304905157
+    },
+    "importancia_pct_catv_y_share_EG8143A5_juntas": {
+      "media": 1.3390216781074793,
+      "desvio": 0.1922707445884953
+    },
+    "correlacion_pct_catv_share_EG8143A5": 0.9926909220915531,
+    "comparacion_5_vs_22_modelos": {
+      "5 modelos más usados": {
+        "predictores": 21,
+        "R2_cv": 0.489250892876998,
+        "R2_prueba": 0.5877041168406335,
+        "R2_ajustado_prueba": 0.36569864129328233
+      },
+      "los 22 modelos": {
+        "predictores": 38,
+        "R2_cv": 0.4572279688433162,
+        "R2_prueba": 0.6175755783697672,
+        "R2_ajustado_prueba": -0.04297569535518031
+      }
+    },
+    "coeficientes_regresion_lineal_top5": {
+      "Localidad_Localidad A": 0.30907047417089384,
+      "pct_catv": 0.16133563698652623,
+      "share_EG8141A5": 0.09524962382553699,
+      "Localidad_Localidad E": -0.08737113280617828,
+      "Localidad_Localidad F": -0.06611907549944769
+    },
+    "importancia_random_forest_top5": {
+      "pct_catv": 0.34290720395712687,
+      "share_EG8143A5": 0.2670882525422109,
+      "share_EG8141A5": 0.1318031836296865,
+      "onts": 0.10095548833067428,
+      "n_modelos": 0.032226268197812644
+    },
+    "residuos": {
+      "cv_entrenamiento": {
+        "n": 240,
+        "media": -0.00134791844163452,
+        "desvio": 0.1434141240379153,
+        "asimetria": -0.10086361958792277,
+        "shapiro_W": 0.9814666607336898,
+        "shapiro_p": 0.003151386389147616,
+        "breusch_pagan_LM": 5.679919481069684,
+        "breusch_pagan_p": 0.017160155281189367
+      },
+      "prueba": {
+        "n": 61,
+        "media": -0.0029040991468389696,
+        "desvio": 0.11751389927827745,
+        "asimetria": -1.003393485357647,
+        "shapiro_W": 0.9449532071415113,
+        "shapiro_p": 0.0083499310462839,
+        "breusch_pagan_LM": 2.575660089597844,
+        "breusch_pagan_p": 0.10851882537742247
+      },
+      "patrones": {
+        "spearman_abs_residuo_vs_onts": -0.35363100743779574,
+        "spearman_p": 1.7721734309877527e-08,
+        "MAE_pon_5_onts_o_menos": 0.1566309424909158,
+        "MAE_pon_mas_de_5_onts": 0.10122029776058354,
+        "n_pon_5_onts_o_menos": 35,
+        "residuo_medio_por_localidad": {
+          "Localidad A": 0.0269,
+          "Localidad B": 0.0072,
+          "Localidad C": -0.0055,
+          "Localidad D": -0.0048,
+          "Localidad E": -0.0078,
+          "Localidad F": -0.0034,
+          "Localidad G": -0.006,
+          "Localidad H": 0.0021,
+          "Localidad I": -0.0014
+        }
+      }
+    },
+    "curva_aprendizaje": {
+      "Ridge (mejor)": {
+        "RMSE_validacion_inicio": 0.16215137185407005,
+        "RMSE_validacion_final": 0.1423274691758217,
+        "RMSE_entrenamiento_final": 0.13039441443870886,
+        "brecha_final_pp": 1.193305473711284,
+        "n_inicio": 57,
+        "n_final": 192
+      },
+      "Random Forest": {
+        "RMSE_validacion_inicio": 0.16334857222370203,
+        "RMSE_validacion_final": 0.1449766416769252,
+        "RMSE_entrenamiento_final": 0.09493755503369158,
+        "brecha_final_pp": 5.003908664323362,
+        "n_inicio": 57,
+        "n_final": 192
+      }
+    },
+    "prueba_olt": {
+      "resultados": {
+        "sin OLT": {
+          "predictores": 21,
+          "R2_cv": 0.49404799237608843,
+          "MAE_cv": 0.10930101678375699,
+          "RMSE_cv": 0.1423274691758217,
+          "R2_prueba": 0.5945818081994403,
+          "R2_ajustado_prueba": 0.37627970492221585,
+          "MAE_prueba": 0.08789429477880176,
+          "RMSE_prueba": 0.1165828666599845
+        },
+        "con OLT": {
+          "predictores": 24,
+          "R2_cv": 0.4643334069914992,
+          "MAE_cv": 0.11285576839610653,
+          "RMSE_cv": 0.14610793387213,
+          "R2_prueba": 0.5075180366701336,
+          "R2_ajustado_prueba": 0.179196727783556,
+          "MAE_prueba": 0.09555430989825535,
+          "RMSE_prueba": 0.12849264781163566
+        }
+      },
+      "pon_con_datos_olt_entrenamiento": 239,
+      "pon_entrenamiento": 240,
+      "pon_con_datos_olt_prueba": 61,
+      "pon_prueba": 61,
+      "corr_spearman_con_objetivo": {
+        "olt_pct_online": -0.10691197962542,
+        "olt_dist_mediana_km": 0.18430577199235854,
+        "olt_rxp_mediana_dbm": -0.20623850859325368
+      }
+    },
+    "criterio_smart": {
+      "metas": {
+        "R2_prueba": 0.45,
+        "R2_ajustado_prueba": 0.3,
+        "MAE_dummy_prueba": 0.127924153947304
+      },
+      "resultados": {
+        "R² en prueba": {
+          "valor": 0.5945818081994403,
+          "cumple": true
+        },
+        "R² ajustado en prueba": {
+          "valor": 0.37627970492221585,
+          "cumple": true
+        },
+        "MAE en prueba menor que el del Dummy": {
+          "valor": 0.08789429477880176,
+          "cumple": true
+        }
+      },
+      "cumple_todo": true
+    }
+  },
+  "obj14_tp3": {
+    "datos": {
+      "equipos": 4872,
+      "en_riesgo": 548,
+      "pct_en_riesgo": 0.11247947454844007,
+      "pon": 300,
+      "entrenamiento": 3899,
+      "prueba": 973,
+      "pon_entrenamiento": 237,
+      "pon_prueba": 63,
+      "pct_en_riesgo_entrenamiento": 0.1128494485765581,
+      "pct_en_riesgo_prueba": 0.11099691675231244,
+      "vec_rxp_nulos": 8
+    },
+    "variables": {
+      "categoricas": [
+        "Localidad",
+        "Modelo_canonico",
+        "Puertos_LAN",
+        "WiFi_Tecnologia"
+      ],
+      "numericas": [
+        "slot_n",
+        "pon_n",
+        "ID",
+        "id_rel",
+        "onts_pon",
+        "fw_generacion",
+        "fw_fuera_estandar",
+        "Distancia_m",
+        "vec_rxp"
+      ],
+      "prohibidas": [
+        "RXP_dBm",
+        "TXP_dBm",
+        "Estado",
+        "Nivel_senal",
+        "en_riesgo"
+      ]
+    },
+    "hiperparametros_elegidos": {
+      "Dummy (prior)": "-",
+      "Regresión Logística": "{'C': 0.01}",
+      "Árbol de Decisión": "{'max_depth': 8, 'min_samples_leaf': 50}",
+      "KNN": "{'n_neighbors': 101, 'weights': 'distance'}",
+      "Naive Bayes": "{'var_smoothing': 0.1}",
+      "Random Forest": "{'max_depth': 10, 'min_samples_leaf': 5}",
+      "Gradient Boosting": "{'learning_rate': 0.05, 'max_depth': 2}"
+    },
+    "umbrales": {
+      "Dummy (prior)": 0.5,
+      "Regresión Logística": 0.5,
+      "Árbol de Decisión": 0.5,
+      "KNN": 0.16746604511896396,
+      "Naive Bayes": 0.19435983864263257,
+      "Random Forest": 0.5,
+      "Gradient Boosting": 0.1769585572829287
+    },
+    "recall_prueba_con_umbral_05": {
+      "KNN": 0.0,
+      "Naive Bayes": 0.24074074074074073,
+      "Gradient Boosting": 0.24074074074074073
+    },
+    "segundos_busqueda": {
+      "Dummy (prior)": 0.741510899970308,
+      "Regresión Logística": 3.260096099926159,
+      "Árbol de Decisión": 3.701809999998659,
+      "KNN": 6.9215287999249995,
+      "Naive Bayes": 1.331925200065598,
+      "Random Forest": 27.65392530011013,
+      "Gradient Boosting": 26.41291009983979
+    },
+    "entrenamiento": {
+      "Dummy (prior)": {
+        "accuracy": 0.8871505514234419,
+        "accuracy_balanceada": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "F1": 0.0,
+        "F1_ponderado": 0.8340999612323147,
+        "kappa": 0.0,
+        "ROC_AUC": 0.5,
+        "PR_AUC": 0.1128494485765581
+      },
+      "Regresión Logística": {
+        "accuracy": 0.7412156963323929,
+        "accuracy_balanceada": 0.6865321690451787,
+        "precision": 0.24392439243924394,
+        "recall": 0.615909090909091,
+        "F1": 0.34945196647324306,
+        "F1_ponderado": 0.7832956487472305,
+        "kappa": 0.22399450536119803,
+        "ROC_AUC": 0.7412041052327263,
+        "PR_AUC": 0.34216469954463347
+      },
+      "Árbol de Decisión": {
+        "accuracy": 0.7771223390612978,
+        "accuracy_balanceada": 0.7573517043811926,
+        "precision": 0.3000931966449208,
+        "recall": 0.7318181818181818,
+        "F1": 0.42564441506939854,
+        "F1_ponderado": 0.812521786298668,
+        "kappa": 0.31619228217779116,
+        "ROC_AUC": 0.83791755368078,
+        "PR_AUC": 0.4289954678811255
+      },
+      "KNN": {
+        "accuracy": 1.0,
+        "accuracy_balanceada": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "F1_ponderado": 1.0,
+        "kappa": 1.0,
+        "ROC_AUC": 1.0,
+        "PR_AUC": 1.0
+      },
+      "Naive Bayes": {
+        "accuracy": 0.806360605283406,
+        "accuracy_balanceada": 0.6607637520039948,
+        "precision": 0.28454172366621067,
+        "recall": 0.4727272727272727,
+        "F1": 0.3552519214346712,
+        "F1_ponderado": 0.8261693614324904,
+        "kappa": 0.24951350546559048,
+        "ROC_AUC": 0.7267871691765881,
+        "PR_AUC": 0.2934523536296339
+      },
+      "Random Forest": {
+        "accuracy": 0.8581687612208259,
+        "accuracy_balanceada": 0.8060050855475833,
+        "precision": 0.4259501965923984,
+        "recall": 0.7386363636363636,
+        "F1": 0.5403158769742311,
+        "F1_ponderado": 0.8737360821626984,
+        "kappa": 0.4635191787526278,
+        "ROC_AUC": 0.9193014271071513,
+        "PR_AUC": 0.6462372185246865
+      },
+      "Gradient Boosting": {
+        "accuracy": 0.8822775070530905,
+        "accuracy_balanceada": 0.7085097505847723,
+        "precision": 0.4786516853932584,
+        "recall": 0.48409090909090907,
+        "F1": 0.48135593220338985,
+        "F1_ponderado": 0.8825674836007903,
+        "kappa": 0.41496167884106483,
+        "ROC_AUC": 0.795212751977713,
+        "PR_AUC": 0.5437067388846155
+      },
+      "Regla de los vecinos": {
+        "ROC_AUC": 0.73198244369103,
+        "PR_AUC": 0.3517951243172869
+      }
+    },
+    "cv_media": {
+      "Dummy (prior)": {
+        "accuracy": 0.8871808261834915,
+        "accuracy_balanceada": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "F1": 0.0,
+        "F1_ponderado": 0.8341456722090254,
+        "kappa": 0.0,
+        "ROC_AUC": 0.5,
+        "PR_AUC": 0.11281917381650867
+      },
+      "Regresión Logística": {
+        "accuracy": 0.738874768805948,
+        "accuracy_balanceada": 0.6831381943793311,
+        "precision": 0.26260293297159654,
+        "recall": 0.611198063276162,
+        "F1": 0.3576922583290053,
+        "F1_ponderado": 0.7807365756332938,
+        "kappa": 0.23466678477571729,
+        "ROC_AUC": 0.7179335667942051,
+        "PR_AUC": 0.32204675876623895
+      },
+      "Árbol de Decisión": {
+        "accuracy": 0.6882275749585405,
+        "accuracy_balanceada": 0.6376487770811442,
+        "precision": 0.20306116713591688,
+        "recall": 0.5724511306370698,
+        "F1": 0.2985579207232404,
+        "F1_ponderado": 0.7424669225121826,
+        "kappa": 0.15698286806480408,
+        "ROC_AUC": 0.6689388110312497,
+        "PR_AUC": 0.3010599588972404
+      },
+      "KNN": {
+        "accuracy": 0.8042875472586768,
+        "accuracy_balanceada": 0.6461787956596072,
+        "precision": 0.2955171367374799,
+        "recall": 0.4421405669506995,
+        "F1": 0.3457178232023898,
+        "F1_ponderado": 0.823474078397191,
+        "kappa": 0.24097617363231855,
+        "ROC_AUC": 0.6882567572387644,
+        "PR_AUC": 0.29875326503371685
+      },
+      "Naive Bayes": {
+        "accuracy": 0.818975348678036,
+        "accuracy_balanceada": 0.6450291385549678,
+        "precision": 0.33899505288632925,
+        "recall": 0.4204604448484228,
+        "F1": 0.3604114690952166,
+        "F1_ponderado": 0.8335573896117836,
+        "kappa": 0.26285133460640425,
+        "ROC_AUC": 0.7065410961535055,
+        "PR_AUC": 0.2827232995976901
+      },
+      "Random Forest": {
+        "accuracy": 0.8167269351838862,
+        "accuracy_balanceada": 0.6705704344403205,
+        "precision": 0.3426599964279519,
+        "recall": 0.48184091016300085,
+        "F1": 0.38495070182305824,
+        "F1_ponderado": 0.8344801163854589,
+        "kappa": 0.28675374538393167,
+        "ROC_AUC": 0.7106658372912952,
+        "PR_AUC": 0.3418566789404387
+      },
+      "Gradient Boosting": {
+        "accuracy": 0.7666134797545758,
+        "accuracy_balanceada": 0.6193365161549874,
+        "precision": 0.26275312015393293,
+        "recall": 0.42915211229900896,
+        "F1": 0.3016054508783571,
+        "F1_ponderado": 0.7929502171566686,
+        "kappa": 0.18805738988233908,
+        "ROC_AUC": 0.6633735511014003,
+        "PR_AUC": 0.2534005074252684
+      }
+    },
+    "cv_desvio": {
+      "Dummy (prior)": {
+        "accuracy": 0.0030118218175569675,
+        "accuracy_balanceada": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "F1": 0.0,
+        "F1_ponderado": 0.004329427787112714,
+        "kappa": 0.0,
+        "ROC_AUC": 0.0,
+        "PR_AUC": 0.003011821817557011
+      },
+      "Regresión Logística": {
+        "accuracy": 0.07814254982352632,
+        "accuracy_balanceada": 0.04524812996608457,
+        "precision": 0.09713012961244828,
+        "recall": 0.08005222999967451,
+        "F1": 0.08092145019713844,
+        "F1_ponderado": 0.05748866191973631,
+        "kappa": 0.10881477550005154,
+        "ROC_AUC": 0.04420982601646216,
+        "PR_AUC": 0.11353504604453306
+      },
+      "Árbol de Decisión": {
+        "accuracy": 0.06162501368916301,
+        "accuracy_balanceada": 0.06559400871875296,
+        "precision": 0.055886490373725194,
+        "recall": 0.07928150109276107,
+        "F1": 0.06942842995048785,
+        "F1_ponderado": 0.0477039314651235,
+        "kappa": 0.08957500814227776,
+        "ROC_AUC": 0.07662449357463061,
+        "PR_AUC": 0.1285531622190205
+      },
+      "KNN": {
+        "accuracy": 0.056092611020862965,
+        "accuracy_balanceada": 0.044473800083421784,
+        "precision": 0.09086810205395915,
+        "recall": 0.06991888626618574,
+        "F1": 0.06762729617514454,
+        "F1_ponderado": 0.03989501369316137,
+        "kappa": 0.09097217325115507,
+        "ROC_AUC": 0.043851903215090686,
+        "PR_AUC": 0.09308048681604955
+      },
+      "Naive Bayes": {
+        "accuracy": 0.06538658045902651,
+        "accuracy_balanceada": 0.04336804226992351,
+        "precision": 0.16055941308174493,
+        "recall": 0.03338730955138791,
+        "F1": 0.09119423992038694,
+        "F1_ponderado": 0.04780146892764904,
+        "kappa": 0.12369532629909283,
+        "ROC_AUC": 0.06302389198815495,
+        "PR_AUC": 0.08232692914728276
+      },
+      "Random Forest": {
+        "accuracy": 0.05677203267259205,
+        "accuracy_balanceada": 0.04238878674646736,
+        "precision": 0.1621880769836059,
+        "recall": 0.07250439613264002,
+        "F1": 0.09551767098906892,
+        "F1_ponderado": 0.04228294830283797,
+        "kappa": 0.12349246761134568,
+        "ROC_AUC": 0.06257492601036968,
+        "PR_AUC": 0.147023665489677
+      },
+      "Gradient Boosting": {
+        "accuracy": 0.10630844233935392,
+        "accuracy_balanceada": 0.041678934441674434,
+        "precision": 0.0868362398702717,
+        "recall": 0.1309719287632841,
+        "F1": 0.05391564645266929,
+        "F1_ponderado": 0.07416230451299513,
+        "kappa": 0.07831727866280917,
+        "ROC_AUC": 0.05833085332709424,
+        "PR_AUC": 0.04233564658163067
+      }
+    },
+    "prueba": {
+      "Dummy (prior)": {
+        "accuracy": 0.8890030832476875,
+        "accuracy_balanceada": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "F1": 0.0,
+        "F1_ponderado": 0.8367656877140912,
+        "kappa": 0.0,
+        "ROC_AUC": 0.5,
+        "PR_AUC": 0.11099691675231244
+      },
+      "Regresión Logística": {
+        "accuracy": 0.7687564234326825,
+        "accuracy_balanceada": 0.6754656390494541,
+        "precision": 0.25316455696202533,
+        "recall": 0.5555555555555556,
+        "F1": 0.34782608695652173,
+        "F1_ponderado": 0.8026727341168953,
+        "kappa": 0.2304731575117841,
+        "ROC_AUC": 0.6979875829586812,
+        "PR_AUC": 0.38863415774296056
+      },
+      "Árbol de Decisión": {
+        "accuracy": 0.750256937307297,
+        "accuracy_balanceada": 0.6488546349818026,
+        "precision": 0.22672064777327935,
+        "recall": 0.5185185185185185,
+        "F1": 0.3154929577464789,
+        "F1_ponderado": 0.7882407167912403,
+        "kappa": 0.19045206000075332,
+        "ROC_AUC": 0.7101316634553629,
+        "PR_AUC": 0.39737599698409565
+      },
+      "KNN": {
+        "accuracy": 0.8530318602261048,
+        "accuracy_balanceada": 0.625626204238921,
+        "precision": 0.3364485981308411,
+        "recall": 0.3333333333333333,
+        "F1": 0.33488372093023255,
+        "F1_ponderado": 0.8527325256568987,
+        "kappa": 0.25227452265924344,
+        "ROC_AUC": 0.6605223720830657,
+        "PR_AUC": 0.25588569384833093
+      },
+      "Naive Bayes": {
+        "accuracy": 0.802672147995889,
+        "accuracy_balanceada": 0.6094572896596018,
+        "precision": 0.24074074074074073,
+        "recall": 0.3611111111111111,
+        "F1": 0.28888888888888886,
+        "F1_ponderado": 0.8192260238859713,
+        "kappa": 0.17961689458013863,
+        "ROC_AUC": 0.6704881181759795,
+        "PR_AUC": 0.27973852193884974
+      },
+      "Random Forest": {
+        "accuracy": 0.8499486125385406,
+        "accuracy_balanceada": 0.6522532648255192,
+        "precision": 0.3467741935483871,
+        "recall": 0.39814814814814814,
+        "F1": 0.3706896551724138,
+        "F1_ponderado": 0.8544224417788312,
+        "kappa": 0.2859684748079938,
+        "ROC_AUC": 0.6754549347034896,
+        "PR_AUC": 0.31352752974780945
+      },
+      "Gradient Boosting": {
+        "accuracy": 0.881808838643371,
+        "accuracy_balanceada": 0.6580175551273817,
+        "precision": 0.45977011494252873,
+        "recall": 0.37037037037037035,
+        "F1": 0.41025641025641024,
+        "F1_ponderado": 0.8761534411584331,
+        "kappa": 0.34542508321487275,
+        "ROC_AUC": 0.7071933204881182,
+        "PR_AUC": 0.43087882030878993
+      },
+      "Regla de los vecinos": {
+        "ROC_AUC": 0.7103136373367587,
+        "PR_AUC": 0.3968909033161675
+      }
+    },
+    "matrices_confusion_prueba": {
+      "Dummy (prior)": [
+        [
+          865,
+          0
+        ],
+        [
+          108,
+          0
+        ]
+      ],
+      "Regresión Logística": [
+        [
+          688,
+          177
+        ],
+        [
+          48,
+          60
+        ]
+      ],
+      "Árbol de Decisión": [
+        [
+          674,
+          191
+        ],
+        [
+          52,
+          56
+        ]
+      ],
+      "KNN": [
+        [
+          794,
+          71
+        ],
+        [
+          72,
+          36
+        ]
+      ],
+      "Naive Bayes": [
+        [
+          742,
+          123
+        ],
+        [
+          69,
+          39
+        ]
+      ],
+      "Random Forest": [
+        [
+          784,
+          81
+        ],
+        [
+          65,
+          43
+        ]
+      ],
+      "Gradient Boosting": [
+        [
+          818,
+          47
+        ],
+        [
+          68,
+          40
+        ]
+      ]
+    },
+    "diagnostico": {
+      "Dummy (prior)": {
+        "brecha_entrenamiento_cv": 0.0,
+        "brecha_entrenamiento_prueba": 0.0,
+        "diagnostico": "subajuste: sesgo alto (no separa ni el entrenamiento)"
+      },
+      "Regresión Logística": {
+        "brecha_entrenamiento_cv": 0.023270538438521227,
+        "brecha_entrenamiento_prueba": 0.043216522274045044,
+        "diagnostico": "ajuste razonable: sesgo y varianza equilibrados"
+      },
+      "Árbol de Decisión": {
+        "brecha_entrenamiento_cv": 0.16897874264953028,
+        "brecha_entrenamiento_prueba": 0.1277858902254171,
+        "diagnostico": "sobreajuste: varianza alta (memoriza el entrenamiento)"
+      },
+      "KNN": {
+        "brecha_entrenamiento_cv": 0.31174324276123555,
+        "brecha_entrenamiento_prueba": 0.33947762791693425,
+        "diagnostico": "sobreajuste: varianza alta (memoriza el entrenamiento)"
+      },
+      "Naive Bayes": {
+        "brecha_entrenamiento_cv": 0.020246073023082678,
+        "brecha_entrenamiento_prueba": 0.05629905100060861,
+        "diagnostico": "ajuste razonable: sesgo y varianza equilibrados"
+      },
+      "Random Forest": {
+        "brecha_entrenamiento_cv": 0.20863558981585617,
+        "brecha_entrenamiento_prueba": 0.24384649240366174,
+        "diagnostico": "sobreajuste: varianza alta (memoriza el entrenamiento)"
+      },
+      "Gradient Boosting": {
+        "brecha_entrenamiento_cv": 0.13183920087631273,
+        "brecha_entrenamiento_prueba": 0.08801943148959479,
+        "diagnostico": "sobreajuste: varianza alta (memoriza el entrenamiento)"
+      }
+    },
+    "umbrales_diagnostico": {
+      "subajuste_ROC_entrenamiento": 0.68,
+      "sobreajuste_brecha": 0.1
+    },
+    "mejor_modelo": "Regresión Logística",
+    "gridsearch_mejora": {
+      "Regresión Logística": {
+        "combinaciones": 4,
+        "referencia": "{'C': 1}",
+        "PR_AUC_cv_referencia": 0.3209823934362099,
+        "PR_AUC_cv_mejor": 0.32204675876623895,
+        "mejora_puntos": 0.0010643653300290712,
+        "mejores_hiperparametros": "{'C': 0.01}",
+        "segundos_busqueda": 3.260096099926159
+      },
+      "Árbol de Decisión": {
+        "combinaciones": 8,
+        "referencia": "{'max_depth': None, 'min_samples_leaf': 10}",
+        "PR_AUC_cv_referencia": 0.19552088659893974,
+        "PR_AUC_cv_mejor": 0.3010599588972404,
+        "mejora_puntos": 0.10553907229830067,
+        "mejores_hiperparametros": "{'max_depth': 8, 'min_samples_leaf': 50}",
+        "segundos_busqueda": 3.701809999998659
+      },
+      "KNN": {
+        "combinaciones": 8,
+        "referencia": "{'n_neighbors': 15, 'weights': 'uniform'}",
+        "PR_AUC_cv_referencia": 0.22227608378867716,
+        "PR_AUC_cv_mejor": 0.29875326503371685,
+        "mejora_puntos": 0.07647718124503969,
+        "mejores_hiperparametros": "{'n_neighbors': 101, 'weights': 'distance'}",
+        "segundos_busqueda": 6.9215287999249995
+      },
+      "Naive Bayes": {
+        "combinaciones": 4,
+        "referencia": "{'var_smoothing': 1e-09}",
+        "PR_AUC_cv_referencia": 0.1199331669567715,
+        "PR_AUC_cv_mejor": 0.2827232995976901,
+        "mejora_puntos": 0.1627901326409186,
+        "mejores_hiperparametros": "{'var_smoothing': 0.1}",
+        "segundos_busqueda": 1.331925200065598
+      },
+      "Random Forest": {
+        "combinaciones": 6,
+        "referencia": "{'min_samples_leaf': 1, 'max_depth': None}",
+        "PR_AUC_cv_referencia": 0.25697687831361277,
+        "PR_AUC_cv_mejor": 0.3418566789404387,
+        "mejora_puntos": 0.08487980062682593,
+        "mejores_hiperparametros": "{'max_depth': 10, 'min_samples_leaf': 5}",
+        "segundos_busqueda": 27.65392530011013
+      },
+      "Gradient Boosting": {
+        "combinaciones": 4,
+        "referencia": "{'learning_rate': 0.1, 'max_depth': 3}",
+        "PR_AUC_cv_referencia": 0.18133279127388996,
+        "PR_AUC_cv_mejor": 0.2534005074252684,
+        "mejora_puntos": 0.07206771615137841,
+        "mejores_hiperparametros": "{'learning_rate': 0.05, 'max_depth': 2}",
+        "segundos_busqueda": 26.41291009983979
+      }
+    },
+    "umbral_decision": {
+      "umbral_f2": 0.5054116554534744,
+      "recall_objetivo": 0.8,
+      "comparacion_prueba": {
+        "0,5 (por defecto)": {
+          "valor": 0.5,
+          "marcados": 237,
+          "accuracy": 0.7687564234326825,
+          "accuracy_balanceada": 0.6754656390494541,
+          "precision": 0.25316455696202533,
+          "recall": 0.5555555555555556,
+          "F1": 0.34782608695652173,
+          "F1_ponderado": 0.8026727341168953,
+          "kappa": 0.2304731575117841,
+          "ROC_AUC": 0.6979875829586812,
+          "PR_AUC": 0.38863415774296056
+        },
+        "F2 máximo en CV": {
+          "valor": 0.5054116554534744,
+          "marcados": 225,
+          "accuracy": 0.774922918807811,
+          "accuracy_balanceada": 0.6667790622992935,
+          "precision": 0.25333333333333335,
+          "recall": 0.5277777777777778,
+          "F1": 0.34234234234234234,
+          "F1_ponderado": 0.8063004311738742,
+          "kappa": 0.22628890123416445,
+          "ROC_AUC": 0.6979875829586812,
+          "PR_AUC": 0.38863415774296056
+        },
+        "recall 80 % en CV": {
+          "valor": 0.35952237287811223,
+          "marcados": 547,
+          "accuracy": 0.49126413155190135,
+          "accuracy_balanceada": 0.6004281738385784,
+          "precision": 0.14625228519195613,
+          "recall": 0.7407407407407407,
+          "F1": 0.24427480916030533,
+          "F1_ponderado": 0.5752519801420722,
+          "kappa": 0.0722855827553196,
+          "ROC_AUC": 0.6979875829586812,
+          "PR_AUC": 0.38863415774296056
+        }
+      },
+      "matrices_confusion_prueba": {
+        "0,5 (por defecto)": [
+          [
+            688,
+            177
+          ],
+          [
+            48,
+            60
+          ]
+        ],
+        "F2 máximo en CV": [
+          [
+            697,
+            168
+          ],
+          [
+            51,
+            57
+          ]
+        ],
+        "recall 80 % en CV": [
+          [
+            398,
+            467
+          ],
+          [
+            28,
+            80
+          ]
+        ]
+      }
+    },
+    "importancia_permutacion": {
+      "vec_rxp": 0.26528887775791893,
+      "WiFi_Tecnologia": 0.0004521537484182233,
+      "onts_pon": 0.0003542422423464438,
+      "Localidad": 0.0002409801608185639,
+      "fw_generacion": 6.102292801272169e-05,
+      "fw_fuera_estandar": -0.00024280092284335216,
+      "Puertos_LAN": -0.0011675767118280074,
+      "ID": -0.0013567142875313613,
+      "id_rel": -0.002788030018350311,
+      "Modelo_canonico": -0.003538683784746625,
+      "slot_n": -0.004936787901735343,
+      "pon_n": -0.00523045904446597,
+      "Distancia_m": -0.010851916987937076
+    },
+    "coeficientes_logistica_top8": {
+      "vec_rxp": -0.6304194197710318,
+      "Distancia_m": 0.14691895221168605,
+      "Modelo_canonico_EG8141H5": 0.13539069923784436,
+      "Localidad_Localidad D": 0.1328761222484936,
+      "Localidad_Localidad F": -0.12922946236251673,
+      "Modelo_canonico_EG8141A5": -0.12296833550648008,
+      "Localidad_Localidad G": -0.11402935014371766,
+      "Localidad_Localidad I": -0.11386370932899433
+    },
+    "curva_aprendizaje": {
+      "Regresión Logística (mejor)": {
+        "PR_AUC_validacion_inicio": 0.2973826017565775,
+        "PR_AUC_validacion_final": 0.3221073462104493,
+        "PR_AUC_entrenamiento_final": 0.34301404053814155,
+        "n_inicio": 467,
+        "n_final": 3116
+      },
+      "Random Forest": {
+        "PR_AUC_validacion_inicio": 0.27516830346818777,
+        "PR_AUC_validacion_final": 0.3372419467062526,
+        "PR_AUC_entrenamiento_final": 0.6779856723528938,
+        "n_inicio": 467,
+        "n_final": 3116
+      }
+    },
+    "clustering": {
+      "k_mejor": 2,
+      "k_extra": 4,
+      "silueta": {
+        "2": 0.2442121688349798,
+        "3": 0.21705700656218269,
+        "4": 0.15827334800322934,
+        "5": 0.17191948671135424,
+        "6": 0.1500969006645225,
+        "7": 0.1665560892879142,
+        "8": 0.15361164953145637
+      },
+      "davies_bouldin": {
+        "2": 2.116726728161953,
+        "3": 1.8528185970676594,
+        "4": 1.9145938165419951,
+        "5": 1.8024882831982576,
+        "6": 1.8980965606751552,
+        "7": 1.6825746195898517,
+        "8": 1.663467381589768
+      },
+      "ARI": {
+        "2": 0.1566535330168565,
+        "3": 0.09876343234239457,
+        "4": 0.03510437295543703,
+        "5": 0.03706374392724899,
+        "6": 0.019697118260883554,
+        "7": 0.02229849339723713,
+        "8": 0.01258308126301955
+      },
+      "pca_varianza": [
+        0.17501269286383775,
+        0.14612355283680817
+      ],
+      "perfil_mejor": {
+        "0": {
+          "equipos": 853,
+          "en_riesgo": 224,
+          "pct_en_riesgo": 0.26260257913247365,
+          "vec_rxp_media": -23.227504778138044,
+          "distancia_mediana_m": 8006.0,
+          "localidad_principal": "Localidad E",
+          "pct_localidad_principal": 0.46893317702227433,
+          "modelo_principal": "EG8141A5"
+        },
+        "1": {
+          "equipos": 4019,
+          "en_riesgo": 324,
+          "pct_en_riesgo": 0.08061706892261757,
+          "vec_rxp_media": -20.232909218865352,
+          "distancia_mediana_m": 1406.0,
+          "localidad_principal": "Localidad H",
+          "pct_localidad_principal": 0.3060462801691963,
+          "modelo_principal": "EG8141A5"
+        }
+      },
+      "perfil_extra": {
+        "0": {
+          "equipos": 553,
+          "en_riesgo": 62,
+          "pct_en_riesgo": 0.11211573236889692,
+          "vec_rxp_media": -21.196093518160524,
+          "distancia_mediana_m": 1528.0,
+          "localidad_principal": "Localidad F",
+          "pct_localidad_principal": 0.3743218806509946,
+          "modelo_principal": "EG8143A5"
+        },
+        "1": {
+          "equipos": 675,
+          "en_riesgo": 180,
+          "pct_en_riesgo": 0.26666666666666666,
+          "vec_rxp_media": -23.335185914334964,
+          "distancia_mediana_m": 8206.0,
+          "localidad_principal": "Localidad E",
+          "pct_localidad_principal": 0.5155555555555555,
+          "modelo_principal": "EG8141A5"
+        },
+        "2": {
+          "equipos": 1100,
+          "en_riesgo": 84,
+          "pct_en_riesgo": 0.07636363636363637,
+          "vec_rxp_media": -20.282657211465008,
+          "distancia_mediana_m": 1441.0,
+          "localidad_principal": "Localidad H",
+          "pct_localidad_principal": 0.3109090909090909,
+          "modelo_principal": "EG8141A5"
+        },
+        "3": {
+          "equipos": 2544,
+          "en_riesgo": 222,
+          "pct_en_riesgo": 0.08726415094339622,
+          "vec_rxp_media": -20.182904896262112,
+          "distancia_mediana_m": 1391.5,
+          "localidad_principal": "Localidad H",
+          "pct_localidad_principal": 0.34355345911949686,
+          "modelo_principal": "EG8141A5"
+        }
+      }
+    },
+    "mejor_entre_todos_cv": "Random Forest",
+    "criterio_smart": {
+      "metas": {
+        "ROC_AUC_prueba": 0.68,
+        "PR_AUC_prueba": 0.22
+      },
+      "resultados": {
+        "Regresión Logística | ROC-AUC en prueba": {
+          "rol": "elegido (individual)",
+          "valor": 0.6979875829586812,
+          "cumple": true
+        },
+        "Regresión Logística | PR-AUC en prueba": {
+          "rol": "elegido (individual)",
+          "valor": 0.38863415774296056,
+          "cumple": true
+        },
+        "Random Forest | ROC-AUC en prueba": {
+          "rol": "mejor en CV entre todos",
+          "valor": 0.6754549347034896,
+          "cumple": false
+        },
+        "Random Forest | PR-AUC en prueba": {
+          "rol": "mejor en CV entre todos",
+          "valor": 0.31352752974780945,
+          "cumple": true
+        }
+      },
+      "cumple_todo": true
+    }
+  }
+}

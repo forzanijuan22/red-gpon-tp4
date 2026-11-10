@@ -1,0 +1,9 @@
+{
+  "clientes": 4872,
+  "en_riesgo": 548,
+  "pct_en_riesgo": 0.11247947454844007,
+  "vec_min": -26.93,
+  "vec_max": -10.996666666666668,
+  "dist_max": 20377.0,
+  "onts_pon_max": 73
+}
