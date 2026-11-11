@@ -443,6 +443,14 @@ def armar(m):
     tops = ", ".join(s.split("_")[1] for s in T2["variables"]["shares_top5"])
     gm2 = pd.read_csv(RAIZ / "reports" / "TP2" / "gridsearch_mejora.csv", encoding="utf-8-sig").set_index("modelo")
     gm3 = pd.read_csv(RAIZ / "reports" / "TP3" / "gridsearch_mejora.csv", encoding="utf-8-sig").set_index("modelo")
+    obj2 = pd.read_csv(RAIZ / "data" / "processed" / "pons.csv", encoding="utf-8-sig")["pct_fw_fuera"] * 100
+    vec = pd.read_csv(RAIZ / "data" / "app" / "tp3_vecinos.csv", encoding="utf-8-sig").set_index("vecinos_desde_dBm")["pct_en_riesgo"] * 100
+    cli = pd.read_csv(RAIZ / "data" / "processed" / "tp3_clientes.csv", encoding="utf-8-sig")
+    riesgo_loc = cli.groupby("Localidad")["en_riesgo"].mean().sort_values() * 100
+    dist_loc = cli.groupby("Localidad")["Distancia_m"].median() / 1000
+    vec_loc = cli.groupby("Localidad")["vec_rxp"].mean()
+    onts_inv = pd.read_csv(RAIZ / "data" / "processed" / "onts.csv", encoding="utf-8-sig")
+    piloto = int(((onts_inv["Modelo_canonico"] == eg["Modelo_canonico"]) & (onts_inv["Localidad"] == "San Vicente")).sum())
 
     # chequeos: el texto afirma que se cumplen las metas, así que se verifica
     assert P2[M2]["R2"] >= meta2["R2_prueba"] and P2[M2]["R2_ajustado"] >= meta2["R2_ajustado_prueba"]
@@ -557,14 +565,14 @@ def armar(m):
         "modelo, o al revés, «acierta» sin aprender nada. Es la fuga de información que describen Kaufman *et al.* [@kaufman]. "
         "Por eso cada problema supervisado declara qué variables quedan prohibidas como entrada (Tabla 1).")
 
-    a.h2("Regresión: firmware por puerto (TP2)")
+    a.h2("Regresión: *firmware* por puerto (TP2)")
     a.p(f"El objetivo es el porcentaje de equipos con *firmware* fuera de estándar de cada puerto PON, que indica cuántos "
         f"equipos se actualizarían si se interviene ese puerto. Se excluyeron como entradas la proporción de equipos con "
         f"*firmware* de generación 3 y la cantidad de versiones, porque se calculan a partir de la misma versión que define "
         f"la respuesta. De los {n(f['Modelos canónicos'])} modelos solo entran las proporciones de los cinco más usados: con "
         f"todos, el R² ajustado de prueba cae a {c(k22['R2_ajustado_prueba'])} porque quedan {k22['predictores']} "
         f"predictores. Los puertos se dividieron en entrenamiento ({D2['entrenamiento']}) y prueba ({D2['prueba']}) con "
-        f"semilla 42, y los hiperparámetros se eligieron con *GridSearchCV* y *KFold* de cinco particiones sobre el "
+        f"semilla 42; la prueba se usó una sola vez, al final, y los hiperparámetros se eligieron con *GridSearchCV* y *KFold* de cinco particiones sobre el "
         f"entrenamiento (Tabla 2). La codificación *one-hot* de localidad y *slot* y el escalado van dentro de un "
         f"*pipeline* de scikit-learn [@pedregosa], de modo que nada se ajusta con datos de prueba.")
     L.p(f"Cada entrada tiene un motivo. La localidad y la tarjeta capturan diferencias de gestión entre zonas; la cantidad "
@@ -596,8 +604,9 @@ def armar(m):
 
     a.h2("Clasificación y agrupamiento: señal en riesgo (TP3)")
     a.p(f"El TP3 se planteó para evitar la fuga del TP1: ¿se puede anticipar que un cliente queda con la señal al límite "
-        f"antes de medirla? Se usaron los {n(D3['equipos'])} equipos online que cruzan con el inventario y tienen lectura "
-        f"válida; la clase positiva es una potencia recibida menor que −25 dBm ({n(D3['en_riesgo'])} casos, "
+        f"antes de medirla? De los {n(f['OLT: filas'])} equipos del listado de la OLT, {n(f['OLT: con ubicación válida'])} "
+        f"tienen una ubicación válida, {n(f['OLT: que cruzan con el inventario'])} cruzan con el inventario y "
+        f"{n(D3['equipos'])} están online con una lectura válida: ese es el conjunto del TP3. La clase positiva es una potencia recibida menor que −25 dBm ({n(D3['en_riesgo'])} casos, "
         f"{c(D3['pct_en_riesgo'] * 100, 1)} %), 2 dB por encima de la sensibilidad de la clase B+ [@g984]. La potencia, el "
         f"estado y el nivel de señal del propio equipo quedaron prohibidos como entradas. Sí entra la señal media de los "
         f"vecinos del mismo puerto sin contar al equipo (*vec_rxp*), porque ya está medida cuando se instala un cliente "
@@ -666,11 +675,19 @@ def armar(m):
         f"{O6['tarjetas']} tarjetas atienden menos de {c(O6['p25_onts_por_tarjeta'], 1)} equipos (el 25 % menos "
         f"ocupado), una señal de capacidad ociosa. Con ese diagnóstico, el TP1 propuso una meta medible: pasar de "
         f"{c(wifi_hoy, 1)} % a {c(wifi_meta, 1)} % de equipos con Wi-Fi 5 o superior antes del 31/12/2027, reemplazando "
-        f"los {n(eg['cantidad'])} {eg['Modelo_canonico']}, el modelo más común.")
+        f"los {n(eg['cantidad'])} {eg['Modelo_canonico']}, el modelo más común, con altas nuevas solo con Wi-Fi 5 o superior "
+        f"desde el 01/12/2026 y un piloto con los {n(piloto)} {eg['Modelo_canonico']} de San Vicente al 31/03/2027.")
     a.figura(FIGURAS / "fig2_eda.png", "Análisis exploratorio del inventario (TP1). (a) Equipos por modelo: ninguno de los "
              "seis más usados tiene Wi-Fi 5 o 6. (b) Porcentaje de equipos con *firmware* fuera de estándar por localidad.")
 
     a.h2("Regresión")
+    a.p(f"La variable que estima el TP2 varía mucho entre puertos (Fig. {a.nfig + 1}a): la mediana es {c(obj2.median(), 1)} %, "
+        f"{D2['pon_con_0_pct']} puertos no tienen ningún equipo fuera de estándar y {D2['pon_con_100_pct']} los tienen todos. Esa "
+        f"variación es la que justifica estimarla puerto por puerto: si todos tuvieran el mismo porcentaje, no habría nada que "
+        f"predecir.")
+    fig_dist = a.figura(FIGURAS / "fig_distribuciones.png", "(a) Distribución del porcentaje de equipos con *firmware* fuera de "
+                        "estándar en los 301 puertos (TP2). (b) Porcentaje de clientes en riesgo según la señal media de sus "
+                        "vecinos de puerto, en tramos de 1 dB con al menos 20 clientes (TP3); la línea marca la tasa de la red.")
     a.p(f"La Tabla {a.ntab + 1} y la Fig. {a.nfig + 1} comparan los modelos. Los cuatro superan con amplitud al *Dummy*, cuyo R² es nulo. "
         f"*Random Forest* y *Gradient Boosting* obtienen el R² de prueba más alto ({c(P2['Random Forest']['R2'])} y "
         f"{c(P2['Gradient Boosting']['R2'])}), pero su R² de entrenamiento ({c(E2['Random Forest']['R2'])} y "
@@ -748,6 +765,14 @@ def armar(m):
         f"el mejor de todos en validación cruzada, pasa de {c(E3['Random Forest']['ROC_AUC'])} en entrenamiento a "
         f"{c(rf_smart, 3)} en prueba, debajo de la meta, y *Gradient Boosting*, aunque alcanza el mayor PR-AUC "
         f"({c(P3['Gradient Boosting']['PR_AUC'])}), detecta solo {cm_gb[1][1]} de los {pos} casos con su umbral.")
+    a.p(f"La Fig. {fig_dist}b muestra el mismo hallazgo sin ningún modelo: cuando los vecinos reciben en promedio −27 dBm, el "
+        f"{c(vec[-27], 0)} % de los clientes está en riesgo; con −25 dBm, el {c(vec[-25], 0)} %, y con −20 dBm, apenas el "
+        f"{c(vec[-20], 0)} %, frente al {c(D3['pct_en_riesgo'] * 100, 1)} % de toda la red. El riesgo también cambia por "
+        f"localidad, del {c(riesgo_loc.iloc[0], 1)} % en {riesgo_loc.index[0]} al {c(riesgo_loc.iloc[-2], 1)} % en "
+        f"{riesgo_loc.index[-2]} y el {c(riesgo_loc.iloc[-1], 1)} % en {riesgo_loc.index[-1]}; en esas dos localidades los "
+        f"clientes están más lejos de la central (mediana de {c(dist_loc[riesgo_loc.index[-1]], 1)} y "
+        f"{c(dist_loc[riesgo_loc.index[-2]], 1)} km) y sus vecinos reciben menos señal (promedio de "
+        f"{c(vec_loc[riesgo_loc.index[-1]], 1)} y {c(vec_loc[riesgo_loc.index[-2]], 1)} dBm).")
     a.figura(FIGURAS / "fig6_tp3_roc_pr.png", "Curvas ROC (a) y precisión-*recall* (b) en prueba (TP3). La regla de los "
              "vecinos (negro, discontinua) rinde igual que la regresión logística (azul).")
     a.p(f"El umbral de decisión define el compromiso entre encontrar clientes en riesgo y no generar falsas alarmas "

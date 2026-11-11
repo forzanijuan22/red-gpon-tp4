@@ -368,10 +368,43 @@ def fig_umbral(m):
     return _guardar(fig, "fig_umbral.png")
 
 
+def fig_distribuciones(m):
+    """(a) % de firmware fuera de estándar por puerto (variable del TP2) y (b) % de clientes en riesgo según la señal media
+    de sus vecinos de puerto (evidencia directa del hallazgo del TP3). Mismos datos que las pestañas «El problema» y
+    «Qué lo explica» del dashboard."""
+    pons = pd.read_csv(RAIZ / "data" / "processed" / "pons.csv", encoding="utf-8-sig")
+    y = pons["pct_fw_fuera"] * 100
+    assert abs(y.mean() / 100 - m["obj09_tp2"]["datos"]["objetivo_media"]) < 1e-9
+    v = pd.read_csv(RAIZ / "data" / "app" / "tp3_vecinos.csv", encoding="utf-8-sig")
+    v = v[v["clientes"] >= 20]
+    red = m["obj14_tp3"]["datos"]["pct_en_riesgo"] * 100
+    fig, (a, b) = plt.subplots(2, 1, figsize=(ANCHO, 3.3), gridspec_kw={"hspace": 0.72})
+    a.hist(y, bins=np.arange(0, 105, 5), color=AZUL_MEDIO, edgecolor="white", linewidth=0.4)
+    a.axvline(y.median(), color=ROJO, ls="--", lw=0.8)
+    a.text(y.median() + 1.5, a.get_ylim()[1] * 0.92, f"mediana {_c(y.median(), 1)} %", color=ROJO, fontsize=5.8, va="top",
+           bbox=dict(fc="white", ec="none", pad=0.3))
+    a.set_xlabel("% de equipos del puerto con firmware fuera de estándar"); a.set_ylabel("puertos PON")
+    a.set_title(f"(a) Variable del TP2 en los {len(y)} puertos")
+    _coma(a)
+    x = v["vecinos_desde_dBm"] + 0.5
+    b.bar(x, v["pct_en_riesgo"] * 100, width=0.85, color=[ROJO if p * 100 > red else GRIS for p in v["pct_en_riesgo"]])
+    b.axhline(red, color=GRIS_OSC, ls="--", lw=0.7)
+    b.text(x.max() + 0.4, red + 2, f"red: {_c(red, 1)} %", fontsize=5.8, color=GRIS_OSC, ha="right", va="bottom")
+    for xi, p in zip(x, v["pct_en_riesgo"]):
+        if p * 100 > 30:
+            b.text(xi, p * 100 + 2, f"{_c(p * 100, 0)} %", ha="center", fontsize=5.6)
+    b.set_xlabel("señal media de los vecinos del puerto (dBm)"); b.set_ylabel("% en riesgo")
+    b.set_title("(b) TP3: % en riesgo según la señal de los vecinos")
+    b.set_ylim(0, 100)
+    _coma(b)
+    return _guardar(fig, "fig_distribuciones.png")
+
+
 def main():
     SALIDA.mkdir(parents=True, exist_ok=True)
     m = json.loads(METRICS.read_text(encoding="utf-8"))
-    rutas = [fig_flujo(m), fig_eda(m), *figs_tp2(m), *figs_tp3(m), fig_importancia(m), fig_aprendizaje(m), fig_umbral(m)]
+    rutas = [fig_flujo(m), fig_eda(m), *figs_tp2(m), *figs_tp3(m), fig_importancia(m), fig_aprendizaje(m), fig_umbral(m),
+             fig_distribuciones(m)]
     for r in rutas:
         print(r.relative_to(RAIZ))
 
