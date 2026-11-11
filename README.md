@@ -32,11 +32,10 @@ data/app/            resúmenes por puerto, por localidad, por modelo y por tram
 data/processed/      resumen por puerto PON (TP2)
 results/, reports/   métricas y tablas que muestra la aplicación
 .streamlit/          tema de colores
-trabajos_practicos/  material académico: notebooks, informes, artículo, presentaciones y código de los TP
+trabajos_practicos/  material académico: notebooks, informes, presentaciones y código de los TP1 a TP3
 ```
 
-El material académico completo de los TP2, TP3 y TP4 (notebooks ejecutados, informes, artículo científico,
-presentaciones, código y figuras) está en [`trabajos_practicos/`](trabajos_practicos/).
+El material académico de los TP1, TP2 y TP3 (notebooks ejecutados, informes, presentaciones, código y figuras) está en [`trabajos_practicos/`](trabajos_practicos/).
 
 Los modelos se entrenaron con scikit-learn 1.9.1; por eso esa versión está fija en `requirements.txt`
 (un modelo guardado con joblib se debe cargar con la misma versión).

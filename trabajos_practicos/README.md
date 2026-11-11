@@ -1,11 +1,11 @@
-# Material académico de los TP1, TP2, TP3 y TP4
+# Material académico de los TP1, TP2 y TP3
 
 Aprendizaje Automático y Grandes Datos (UNRaf, 2026). Juan Ignacio Forzani, Alejo Racca y Agustín Cesano.
 
 | Carpeta | Contenido |
 |---|---|
 | `notebooks/` | Notebooks entregables del TP1 (análisis exploratorio), del TP2 (regresión) y del TP3 (clasificación), ya ejecutados de principio a fin |
-| `informes/` | Informes del TP2 y del TP3 y artículo científico integrador del TP4 (PDF) |
+| `informes/` | Informes del TP2 y del TP3 (PDF) |
 | `presentaciones/` | Presentaciones orales del TP1, del TP2 y del TP3 (sin las diapositivas de respaldo para preguntas) |
 | `src/` | Código de los TP: preparación de datos, modelos, informes, figuras y serialización |
 | `reports/` | Tablas de métricas y figuras de cada TP |
