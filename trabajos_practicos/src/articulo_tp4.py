@@ -681,11 +681,11 @@ def armar(m):
              "seis más usados tiene Wi-Fi 5 o 6. (b) Porcentaje de equipos con *firmware* fuera de estándar por localidad.")
 
     a.h2("Regresión")
-    a.p(f"La variable que estima el TP2 varía mucho entre puertos (Fig. {a.nfig + 1}a): la mediana es {c(obj2.median(), 1)} %, "
+    L.p(f"La variable que estima el TP2 varía mucho entre puertos (Fig. {a.nfig + 1}a): la mediana es {c(obj2.median(), 1)} %, "
         f"{D2['pon_con_0_pct']} puertos no tienen ningún equipo fuera de estándar y {D2['pon_con_100_pct']} los tienen todos. Esa "
         f"variación es la que justifica estimarla puerto por puerto: si todos tuvieran el mismo porcentaje, no habría nada que "
         f"predecir.")
-    fig_dist = a.figura(FIGURAS / "fig_distribuciones.png", "(a) Distribución del porcentaje de equipos con *firmware* fuera de "
+    fig_dist = L.figura(FIGURAS / "fig_distribuciones.png", "(a) Distribución del porcentaje de equipos con *firmware* fuera de "
                         "estándar en los 301 puertos (TP2). (b) Porcentaje de clientes en riesgo según la señal media de sus "
                         "vecinos de puerto, en tramos de 1 dB con al menos 20 clientes (TP3); la línea marca la tasa de la red.")
     a.p(f"La Tabla {a.ntab + 1} y la Fig. {a.nfig + 1} comparan los modelos. Los cuatro superan con amplitud al *Dummy*, cuyo R² es nulo. "
@@ -765,7 +765,7 @@ def armar(m):
         f"el mejor de todos en validación cruzada, pasa de {c(E3['Random Forest']['ROC_AUC'])} en entrenamiento a "
         f"{c(rf_smart, 3)} en prueba, debajo de la meta, y *Gradient Boosting*, aunque alcanza el mayor PR-AUC "
         f"({c(P3['Gradient Boosting']['PR_AUC'])}), detecta solo {cm_gb[1][1]} de los {pos} casos con su umbral.")
-    a.p(f"La Fig. {fig_dist}b muestra el mismo hallazgo sin ningún modelo: cuando los vecinos reciben en promedio −27 dBm, el "
+    L.p(f"La Fig. {fig_dist}b muestra el mismo hallazgo sin ningún modelo: cuando los vecinos reciben en promedio −27 dBm, el "
         f"{c(vec[-27], 0)} % de los clientes está en riesgo; con −25 dBm, el {c(vec[-25], 0)} %, y con −20 dBm, apenas el "
         f"{c(vec[-20], 0)} %, frente al {c(D3['pct_en_riesgo'] * 100, 1)} % de toda la red. El riesgo también cambia por "
         f"localidad, del {c(riesgo_loc.iloc[0], 1)} % en {riesgo_loc.index[0]} al {c(riesgo_loc.iloc[-2], 1)} % en "
