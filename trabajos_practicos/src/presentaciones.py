@@ -3,6 +3,7 @@ fondo oscuro, una idea por diapositiva, cifras grandes repartidas, gráficos poc
 notas del orador con guion (IDEA CENTRAL, PASE, SI PREGUNTAN) y respaldo para preguntas al final.
 Todo es nativo de PowerPoint (formas, gráficos y tablas editables). Las cifras salen de results/metrics.json."""
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -308,6 +309,13 @@ class Deck:
     def guardar(self, nombre):
         SALIDA.mkdir(parents=True, exist_ok=True)
         ruta = SALIDA / nombre
+        # se entregan sin las diapositivas de respaldo para preguntas (separadora «Respaldo para preguntas» y «R1 · RESPALDO»…)
+        lista = self.prs.slides._sldIdLst
+        for sld_id, diapositiva in list(zip(list(lista), list(self.prs.slides))):
+            texto = " ".join(f.text_frame.text for f in diapositiva.shapes if f.has_text_frame)
+            if re.search(r"\bRESPALDO\b|Respaldo para preguntas", texto):
+                self.prs.part.drop_rel(sld_id.rId)
+                lista.remove(sld_id)
         self.prs.save(ruta)
         return ruta
 
@@ -720,7 +728,7 @@ def presentacion_tp2(m):
                                            f"común de cada modelo; la empresa tiene que confirmar cuál es la correcta.", s=15)]])
     D.notas(s, "Respaldo. Si preguntan por qué Larrechea aparece tan desactualizada: la mayoría de sus EG8143A5 tiene V5, más nueva "
                "que el 'estándar' V3. La definición se mantuvo (es la del CLAUDE.md), pero se informa la advertencia.")
-    return D.guardar("TP2_presentacion.pptx")
+    return D.guardar("TP2_AA_Forzani_Racca_Cesano.pptx")
 
 
 # ====================================================================== TP3
@@ -1065,7 +1073,7 @@ def presentacion_tp3(m):
         D.texto(s, x + 0.25, 3.5, 3.3, 2.4, [[D.g(txt, s=15)]])
     D.notas(s, "Respaldo. La pregunta del TP3 nació de la fuga de datos del TP1 (respaldo R3 de esa presentación): acá se evita a "
                "propósito. La señal de los vecinos sí vale porque ya está medida cuando se instala un cliente nuevo.")
-    return D.guardar("TP3_presentacion.pptx")
+    return D.guardar("TP3_AA_Forzani_Racca_Cesano.pptx")
 
 
 def main():

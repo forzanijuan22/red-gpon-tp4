@@ -353,7 +353,7 @@ def informe_tp2(m):
                      "S. S. Shapiro y M. B. Wilk, “An analysis of variance test for normality (complete samples),” <i>Biometrika</i>, vol. 52, n.º 3/4, pp. 591–611, 1965.",
                      "R. Koenker, “A note on studentizing a test for heteroscedasticity,” <i>J. Econometrics</i>, vol. 17, n.º 1, pp. 107–112, 1981.",
                      REFS_COMUNES["esl"]])
-    return inf.construir(SALIDA / "TP2_informe_regresion.pdf")
+    return inf.construir(SALIDA / "TP2_informe_regresion_Forzani_Racca_Cesano.pdf")
 
 
 # ================================================================== TP3
@@ -567,7 +567,7 @@ def informe_tp3(m):
         "P. J. Rousseeuw, “Silhouettes: A graphical aid to the interpretation and validation of cluster analysis,” <i>J. Comput. Appl. Math.</i>, vol. 20, pp. 53–65, 1987.",
         "D. L. Davies y D. W. Bouldin, “A cluster separation measure,” <i>IEEE Trans. Pattern Anal. Mach. Intell.</i>, vol. PAMI-1, n.º 2, pp. 224–227, 1979.",
         "L. Hubert y P. Arabie, “Comparing partitions,” <i>J. Classif.</i>, vol. 2, n.º 1, pp. 193–218, 1985."])
-    return inf.construir(SALIDA / "TP3_informe_clasificacion.pdf")
+    return inf.construir(SALIDA / "TP3_informe_clasificacion_Forzani_Racca_Cesano.pdf")
 
 
 def main():
